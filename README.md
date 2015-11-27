@@ -1,2 +1,2 @@
 # Centre-Sustainable-Agriculture
-Broad scope- KB for farmers, forums, Image based result search , translations 
+Transform agricultural practices by creating an interactive forum for farmers to be able to access information and ask questions to improve and enhance agricultural practices & output
