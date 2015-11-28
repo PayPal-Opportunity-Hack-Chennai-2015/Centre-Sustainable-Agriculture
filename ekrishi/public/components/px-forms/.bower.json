@@ -1,0 +1,25 @@
+{
+  "name": "px-forms",
+  "version": "0.0.1",
+  "ignore": [
+    ".editorconfig",
+    ".gitignore",
+    "bower.json",
+    "Gruntfile.js",
+    "node_modules",
+    "package.json",
+    "examples"
+  ],
+  "dependencies": {
+    "px-base": "~0.0.9"
+  },
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "967c064271e9720d2efa1b1f0d02a8aff2bf5632"
+  },
+  "_source": "git://github.paypal.com/UIE-Components/px-forms.git",
+  "_target": "~0.0.1",
+  "_originalSource": "px-forms"
+}

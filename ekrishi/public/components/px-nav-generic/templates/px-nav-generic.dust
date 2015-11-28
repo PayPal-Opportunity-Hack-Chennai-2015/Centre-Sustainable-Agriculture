@@ -1,0 +1,13 @@
+{!
+	This is the px-nav-generic component. It consists of the top-level
+	navigation bar seen globally across the application.
+!}
+<div class="px-nav">
+	<nav role="navigation">
+		{>"{px-nav-logo|s}" /}
+
+		{>"{px-nav-links|s}" /}
+
+		{>"{px-nav-actions|s}" /}
+	</nav>
+</div>

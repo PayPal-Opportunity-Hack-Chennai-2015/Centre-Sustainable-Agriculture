@@ -1,0 +1,12 @@
+{
+	"cases": [{
+		"name": "default",
+		"response": {
+			"statusCode": 200,
+			"body": {
+				"response_status":"0",
+				"detailed_status":"Seller proposed offer to buyer successfully"
+			}
+		}
+	}]
+}

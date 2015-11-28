@@ -1,0 +1,113 @@
+{
+	"getSenderTransactionDetails": {
+		"endpoint": "/DisputeCoreIntegration/1.0/get_sender_transaction_details",
+		"action": "post",
+		"hasResponse": true
+	},
+	"isRcrEnabled": {
+		"endpoint": "/DisputeCoreIntegration/1.0/is_rcr_enabled",
+		"action": "post",
+		"hasResponse": true
+	},
+	"loadByAccount": {
+		"endpoint": "/UserRead/2.0/load_by_account",
+		"action": "post",
+		"hasResponse": true
+	},
+	"openDispute": {
+		"endpoint": "/DisputeResolution/1.0.0/open_dispute",
+		"action": "post",
+		"hasResponse": true
+	},
+	"closeDispute": {
+		"endpoint": "/DisputeResolution/1.0.0/close_dispute",
+		"action": "post",
+		"hasResponse": true
+	},
+	"getCaseDetails": {
+		"endpoint": "/DisputeResolution/1.0.0/get_case_details",
+		"action": "post",
+		"hasResponse": true
+	},
+	"escalateToClaim": {
+		"endpoint": "/DisputeResolution/1.0.0/escalate_to_claim",
+		"action": "post",
+		"hasResponse": true
+	},
+	"postDisputeMessage": {
+		"endpoint": "/DisputeResolution/1.0.0/post_dispute_message",
+		"action": "post",
+		"hasResponse": true
+	},
+	"closeCaseWithRefund": {
+		"endpoint": "/DisputeResolution/1.0.0/close_case_with_refund",
+		"action": "post",
+		"hasResponse": true
+	},
+	"getDisputeMessages": {
+		"endpoint": "/DisputeRead/1.0.0/get_dispute_messages",
+		"action": "post",
+		"hasResponse": true
+	},
+	"getDisputeDetails": {
+		"endpoint": "/DisputeRead/1.0.0/get_disputes",
+		"action": "post",
+		"hasResponse": true
+	},
+	"createtoken": {
+		"endpoint": "/webapps/servicebridge/services/invoke/createtoken",
+		"action": "post",
+		"hasResponse": true,
+		"preProcess": true
+	},
+	"denyOffer": {
+		"endpoint": "/v1/customer-support/merchandise-disputes/PP-000-000-710-094/deny-offer",
+		"action": "post",
+		"hasResponse": true
+	},
+	"acceptOffer": {
+		"endpoint": "/v1/customer-support/merchandise-disputes/PP-000-000-710-094/accept-offer",
+		"action": "post",
+		"hasResponse": true
+	},
+	"proposeOffer": {
+		"endpoint": "/v1/customer-support/merchandise-disputes/PP-000-000-710-094/propose-offer",
+		"action": "post",
+		"hasResponse": true
+	},
+	"updateMerchandiseDispute": {
+		"endpoint": "/v1/customer-support/merchandise-disputes/PP-000-000-710-094/update_merchandise_dispute",
+		"action": "post",
+		"hasResponse": true
+	},
+	"calculateFeeAmount": {
+		"endpoint": "/DisputeCoreIntegration/1.0/calculate_fee_for_amount",
+		"action": "post",
+		"hasResponse": true	
+	},
+	"isCaseCreationPermitted" : {
+		"endpoint": "/DisputeRead/1.0.0/is_case_creation_permitted",
+		"action": "post",
+		"hasResponse": true	
+	},
+	"getBillingDisputes":{
+		"endpoint": "/DisputeRead/1.0.0/get_billing_disputes",
+		"action": "post",
+		"hasResponse": true	
+	},
+	"openBillingDispute": {
+		"endpoint": "/DisputeResolution/1.0.0/open_billing_dispute",
+		"action": "post",
+		"hasResponse": true
+	},
+	"updateDisputeItems": {
+		"endpoint": "/DisputeResolution/1.0.0/update_dispute_items",
+		"action": "post",
+		"hasResponse": true	
+	},
+	"checkIsDisputeAllowed": {
+		"endpoint": "/DisputeResolution/1.0.0/check_is_dispute_allowed",
+		"action": "post",
+		"hasResponse": true	
+	}
+}

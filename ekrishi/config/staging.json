@@ -1,0 +1,15 @@
+{
+	"middleware": {
+		"pplogger": {
+			"enabled": true,
+			"priority": 103,
+			"module": {
+				"name": "pplogger",
+				"arguments": [{
+					"type": "console",
+					"format": "console"
+				}]
+			}
+		}
+	}
+}

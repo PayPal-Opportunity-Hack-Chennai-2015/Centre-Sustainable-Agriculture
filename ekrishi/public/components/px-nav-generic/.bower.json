@@ -1,0 +1,25 @@
+{
+  "name": "px-nav-generic",
+  "version": "0.0.4",
+  "ignore": [
+    ".editorconfig",
+    ".gitignore",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json",
+    "src",
+    "examples"
+  ],
+  "dependencies": {
+    "px-grids": "0.0.1"
+  },
+  "_release": "0.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.4",
+    "commit": "970829e7b1047acbdbfb02fb4fcd5517d4ff004d"
+  },
+  "_source": "git://github.paypal.com/UIE-Components/px-nav-generic.git",
+  "_target": "~0.0.2",
+  "_originalSource": "px-nav-generic"
+}

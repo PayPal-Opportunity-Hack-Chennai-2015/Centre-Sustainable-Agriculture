@@ -1,0 +1,42 @@
+{
+	"sys" : {
+		"tracking" : {
+			"siteCatalyst" : {
+				"jsFile" : "https://www.paypalobjects.com/js/site_catalyst/pp_jscode_080706.js",
+				"propVars" : [
+					{
+						"prop" : "s.pageName",
+						"value" : "main\\x3Amktg\\x3Apersonal\\x3A\\x3Ahome"
+					}, {
+						"prop" : "s.channel",
+						"value" : "mktg"
+					}, {
+						"prop" : "s.hier1",
+						"value" : "main_mktg_personal_"
+					}, {
+						"prop" : "s.eVar31",
+						"value" : "main\\x3Amktg\\x3Apersonal\\x3A\\x3Ahome"
+					}, {
+						"prop" : "s.eVar25",
+						"value" : "main\\x3Amktg\\x3Apersonal\\x3A\\x3Ahome\\x3A\\x3A\\x3A"
+					}, {
+						"prop" : "s.prop25",
+						"value" : "main\\x3Amktg\\x3Apersonal\\x3A\\x3Ahome\\x3A\\x3A\\x3A"
+					}, {
+						"prop" : "s.prop31",
+						"value" : "personal"
+					}, {
+						"prop" : "s.prop1",
+						"value" : "core2HomeCExp.jsp"
+					}, {
+						"prop" : "s.prop20",
+						"value" : "Unknown"
+					}, {
+						"prop" : "s.prop35",
+						"value" : "out"
+					}
+				]
+			}
+		}
+	}
+}
