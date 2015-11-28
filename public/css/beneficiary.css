@@ -1,0 +1,181 @@
+.row {
+  padding-top: 20px;
+}
+
+
+.navbar-home{
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+body {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  background-color: #FFFFFF;
+  overflow-x:hidden;
+   background-image: url('../images/body_panel.png');
+}
+
+
+
+
+ .lead{
+  
+   margin-top: 5px;
+   margin-bottom:0px;
+  
+}
+
+.jumbotron{
+  
+
+  background-color:#185151;
+background-image: url('../images/bg.png');
+  padding: 70px;
+  text-align: left;
+  color: #fff;
+   margin: 0 auto;
+    width: 100%;
+    
+    color: #fff;
+    height: 100px;
+}
+
+
+
+
+#submit{
+	margin: 3% 0 3% 35%;
+	width:150px;
+}
+.error {
+   color: red;
+}
+
+#trash{
+  position:relative;
+  top: 8px;
+}
+
+.footer{
+  position: fixed;
+  font-color: #FFFFFF;
+  left:0px;
+  bottom:0px;
+  background-color: #303030;
+ font-size: 14px;
+  width:100%;
+  height: 5%
+}
+
+
+footer {
+  margin-top: 10px;
+  padding-top: 10px;
+    left:0px;
+  bottom:0px;
+  background-color: #303030;
+  border-top: 1px solid #ddd;
+  color: #e2e2e2;
+}
+footer hr {
+  border-top: none;
+  border-bottom: 1px solid #666;
+}
+footer a {
+  color: #ccc;
+}
+
+footer  p{
+  text-align: left;
+  
+}
+footer a:hover {
+  color: #fff;
+}
+footer h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.beneficiary{
+  padding-top: 10px;
+padding-bottom: 50px;
+}
+
+
+
+
+
+
+.benf-details-filter{
+    position: relative;
+    top: 160px; 
+}
+
+.filter-visible
+{
+  display:none;
+  margin-bottom:30px;
+  
+
+}
+
+
+.block{
+  position: relative;
+  left: 70%;
+  width: 90%;
+}
+
+#export,#filter-option{
+  width:150px;
+}
+
+
+.navalign{
+  text-align:right;
+}
+
+.filter-options{
+  margin-left: 500px;
+}
+
+.left{
+
+   position: relative;
+   top: 25%;
+   left:22%;
+   width: 20%; 
+  }
+
+.right{
+    position: relative;
+    top: 25%;
+    left: 46%;
+    width: 20%;
+  }
+
+.panel-default>.panel-heading {
+  color: #FFFFFF;
+  background-color:#185151;
+}
+.panel-heading a:after {
+    font-family:'Glyphicons Halflings';
+    content:"\e114";
+    float: right;
+    color: #FFFFFF;
+}
+.panel-heading a.collapsed:after {
+    content:"\e080";
+}
+
+
+.btn-group-sm>.btn, .btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}

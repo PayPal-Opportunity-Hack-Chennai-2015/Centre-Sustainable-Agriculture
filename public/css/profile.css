@@ -1,0 +1,88 @@
+/* make sidebar nav vertical */ 
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .sidebar-nav .navbar hr {
+       margin-bottom:3px !important; 
+       margin-top:3px !important;
+   }
+.pnav{
+  padding-top: 9px;
+}
+
+.photodiv{
+  padding-top:20px !important
+}
+
+#popup {
+    position:absolute;
+    display:hidden;
+    top:50%;
+    left:50%;
+    width:50%;
+    height:10%px;
+    margin-top:--100%;
+    margin-left:-100%;
+    background-color:#fff;
+    z-index:2;
+    padding:5px;
+}
+#overlay-back {
+    position : fixed;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background : #000;
+    opacity : 0.7;
+    filter : alpha(opacity=60);
+    z-index : 1;
+    display: none;
+}
+
+.colldiv{
+  padding-top:30px !important
+}
+.highlight {
+    background-color: LightGray;
+    font-weight: bold;
+}
+
+
+}
+
+hr {
+    margin: 1px;
+    width: 50%;
+}
+
+.navalign{
+ text-align: center;
+}
+@media screen and (max-width: 766px){
+#pagination-proj{
+    display: none;
+}
+
+
+.profile-panel{
+  padding-top: 60px;
+}
+
+#profileedit{
+  display: inline-block;
+}
