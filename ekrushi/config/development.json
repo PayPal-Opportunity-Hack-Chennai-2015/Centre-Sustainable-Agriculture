@@ -1,0 +1,117 @@
+{
+
+	"topos": {
+		"host": "stage2t9391.qa.paypal.com"
+	},
+
+	"mochatestSetup": {
+		"openshiftEnvVariable": "OPENSHIFT_INTERNAL_IP",
+		"appPort": 16000,
+		"mocksPort": 17000
+	},
+
+	"express": {
+		"view engine": "dust",
+		"view cache": false,
+		"views": "path:./public/templates"
+	},
+
+
+	"view engines": {
+		"dust": {
+			"module": "engine-munger",
+			"renderer": {
+				"method": "dust",
+				"arguments": [{
+					"cache": false,
+					"helpers": [
+						"ppdustjs-filters-secure",
+						"dustjs-helpers",
+						"dusthelpers-supplement",
+						"./lib/helper-formatDate"
+					]
+				}, {
+//INFO: Uncomment the following line to trigger pisces
+//					"enableMetadata": true,
+					"views": "config:express.views",
+					"view engine": "config:express.view engine",
+					"i18n": "config:i18n"
+				}]
+			}
+		}
+	},
+	"middleware": {
+
+		// Enable run-time compiling before static middleware
+
+		"devtools": {
+			"enabled": true,
+			"priority": 35,
+			"module": {
+				"name": "kraken-devtools",
+				"arguments": [
+					"path:./public",
+					"path:./.build", {
+						"dust": {
+							"module": "kraken-devtools/plugins/dustjs",
+							"files": "/templates/**/*.js",
+							"base": "templates",
+							"i18n": "config:i18n"
+						},
+						"less": {
+							"module": "kraken-devtools/plugins/less",
+							"files": "/css/**/*.css"
+						},
+						"copier": {
+							"module": "kraken-devtools/plugins/copier",
+							"files": "**/*"
+						}
+					}
+				]
+			}
+		},
+
+		// Override logger options
+		"pplogger": {
+			"module": {
+				"arguments": [{
+					"type": "console",
+					"format": "console"
+				}]
+			}
+		},
+
+		// Override the session type
+
+		"session": {
+			"module": {
+				"name": "express-session"
+			}
+		},
+		"appsec": {
+			"enabled": true,
+			"priority": 110,
+			"module": {
+				"name": "lusca",
+				"arguments": [
+					{
+						"csp": {
+							"policy": {
+
+								"default-src": "'self' https://*.paypal.com https://*.paypalobjects.com 'unsafe-inline'",
+								"connect-src": "'self' https://*.paypal.com https://*.paypalobjects.com 'unsafe-inline'",
+								"script-src": "'self' https://www.google-analytics.com https://googleads.g.doubleclick.net https://stats.g.doubleclick.net http://*.paypalobjects.com https://*.paypalobjects.com https://*.paypal.com:* http://*.paypal.com:* http://paypal.112.2o7.net *.omtrdc.net data: 'unsafe-inline' 'unsafe-eval'",
+								"img-src": "https://www.google-analytics.com https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://*.paypalobjects.com https://*.paypal.com:* http://*.paypal.com:* http://paypal.112.2o7.net *.omtrdc.net data:",
+								"object-src": "'self' https://*.paypal.com https://*.paypalobjects.com",
+								"font-src": "'self' https://*.paypal.com https://*.paypalobjects.com "
+							}
+						},
+						"csrf": true,
+						"xframe": "SAMEORIGIN",
+						"xssProtection": true
+					}
+				]
+			}
+		}
+	}
+}

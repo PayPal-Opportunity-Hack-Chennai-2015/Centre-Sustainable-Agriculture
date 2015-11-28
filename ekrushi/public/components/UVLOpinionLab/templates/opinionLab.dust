@@ -1,0 +1,42 @@
+{!
+	@param	showSiteFeedbackIcon					Boolean indicating whether to show or hide plus icon image next to site feedback link
+	@param	miniBrowser								Boolean indicating, if opinionLab is used inside a miniBrowser
+	@param	commentCardCmd							-
+	@param	sfRedirect								-
+	@param	showOpinionLabOnBrowserClose			Boolean indicating whether to open opinion lab pop up on closing PP window
+	@param	siteFeedbackLabelKey					Content key to find correct site feed back label
+!}
+
+<script type="text/javascript">
+	(function() {
+		var feedback_link = '',
+			className = "{className}";
+		{?siteFeedbackLabelKey}
+			feedback_link="{siteFeedbackLabelKey}";
+		{:else}
+			feedback_link="{@pre type="content" key="opinionLab.SiteFeedback" editable="false" /}";
+		{/siteFeedbackLabelKey}
+
+		window.PAYPAL = window.PAYPAL ? window.PAYPAL : {};
+		window.PAYPAL.opinionLabVars = {
+			'siteCatalystPageName' 		: '',
+			'siteCatalystC7' 			: '',
+			'siteCatalystAccountNumber' : '',
+			'feedback_link' 			: feedback_link,
+			'isPaymentFlow' 			: {?showOpinionLabOnBrowserClose}{showOpinionLabOnBrowserClose}{:else}false{/showOpinionLabOnBrowserClose},
+			'isSiteRedirect' 			: {?sfRedirect}{sfRedirect}{:else}false{/sfRedirect},
+			'languageCode' 				: '{context.locality.language}',
+			'countryCode' 				: '{context.locality.country}',
+			'serverName' 				: '{context.pageInfo.hostName}',
+			'commentCardCmd' 			: '{commentCardCmd}',
+			'accountNumber'				: '{data.user.encryptedAccountNumber}',
+			'miniBrowser'				: {?miniBrowser}{miniBrowser}{:else}false{/miniBrowser},
+			'sitefb_plus_icon'			: 'https://www.paypalobjects.com/en_US/i/scr/sm_333_oo.gif',
+			'rLogId'					: escape('{context.pageInfo.rlogId}'),
+			'showSitefbIcon'			: {?showSiteFeedbackIcon}{showSiteFeedbackIcon}{:else}false{/showSiteFeedbackIcon},
+			'className'					: className,
+			'optOut'					: {?optOut}true{:else}false{/optOut},
+			'page'						: '{page}'
+		};
+	})();
+</script>

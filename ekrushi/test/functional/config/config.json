@@ -1,0 +1,15 @@
+{
+  "plugins": {
+    "view": {
+      "module": "nemo-view",
+      "arguments": ["path:locator"]
+    }
+  },
+  "driver": {
+    "server": "http://bluefinlvs24.qa.paypal.com:4444/wd/hub",
+    "browser": "firefox"
+  },
+  "data": {
+    "baseUrl": "https://www.stage2t7540.qa.paypal.com/login"
+  }
+}

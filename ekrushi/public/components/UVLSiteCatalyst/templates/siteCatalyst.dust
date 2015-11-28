@@ -1,0 +1,32 @@
+{!
+	@param	disableOnLoad	Disable attaching onload event so that pages with Ajax response will have more control
+!}
+
+{#sys}
+	{#tracking}
+		{#siteCatalyst}
+			<!-- SiteCatalyst Code -->
+			<script type="text/javascript" src="{jsFile|s}"></script>
+			<script type="text/javascript"><!--
+				{#propVars}{prop|s}="{value|s}";{/propVars}
+				{! --- DO NOT ALTER ANYTHING BELOW THIS LINE --- !}
+				function scOnload(){
+					var s_code=s.t();
+					if(s_code)document.write(s_code);
+				}
+				{@if cond=" '{disableOnLoad}' !== 'true' "}
+					if (window.addEventListener){
+						window.addEventListener('load',scOnload,false);
+					} else if (window.attachEvent){
+						window.attachEvent('onload', scOnload);
+					};
+				{/if}
+				if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+				//-->
+			 </script>
+			<noscript><img src="//paypal.112.2O7.net/b/ss/{suiteVar|s}/1/H.6--NS/0?pageName=NonJavaScript" alt="" height="1" width="1" border="0"></noscript>
+			{! --- DO NOT REMOVE THIS COMMENT --- !}
+			<!-- End SiteCatalyst Code -->
+		{/siteCatalyst}
+	{/tracking}
+{/sys}

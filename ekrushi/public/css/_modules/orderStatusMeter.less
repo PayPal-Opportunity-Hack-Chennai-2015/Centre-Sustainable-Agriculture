@@ -1,0 +1,115 @@
+// Order Status Meters
+#orderStatusMeter,
+#orderStatusMeterEscalation {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	margin-top: 14px;
+	padding-top: 66px;
+	width: 371px;
+	height: 1em;
+	margin-left: 3em;
+	padding-right: 45px;
+	min-height: 2em;
+
+	& > div {
+		float: left;
+		font-size: @font-size-base - 2;
+		line-height: 18px;
+		color: #777;
+		margin-top: 7px;
+		width: 12.9em;
+		position: relative;
+		left: 50px;
+
+		a {
+			font-size: @font-size-base - 2;
+		}
+
+		p {
+			margin: 0.7em 0;
+		}
+
+		&.step1 {
+			text-align: center;
+			margin-left: -100px;
+		}
+		&.step2 {
+			text-align: center;
+		}
+		&.step3 {
+			text-align: center;
+		}
+	}
+}
+
+#orderStatusMeter {
+	background-image: url("@{baseImagePath}/i/resolutioncenter/orderStatusMeter.png");
+	position: relative;
+
+	&.processing {
+		background-position: 0 0;
+	}
+	&.processed {
+		background-position: 0 -109px;
+	}
+
+	&.shipping {
+		background-position: 0 -218px;
+	}
+
+	&.delivered {
+		background-position: 0 -327px;
+	}
+
+	&.electronic {
+		width: 190px;
+		margin-left: 8.8em;
+		& > div {
+			&.step2 {
+				text-align: right;
+				width: 10em;
+			}
+			&.step3 {
+				display: none;
+			}
+		}
+	}
+
+	& > div {
+		&.step1 {
+		}
+
+		&.step2 {
+		}
+
+		&.step3 {
+			.caption {
+			}
+		}
+	}
+
+	.requestTracking {
+		position: relative;
+		left: 6px;
+
+		a.button {
+			padding: 4px 10px;
+		}
+
+		&.spinner {
+			margin-left: -10px;
+			margin-right: -10px; // adjust dimensions so spinner icon shows and button still looks aligned
+			background: url("@{baseImagePath}/i/resolutioncenter/icon_loadingGraphic_16x16_90.gif)" 0 6px no-repeat;
+		}
+	}
+
+	.requestCheck {
+		max-width: 9em;
+		padding-left: 2em;
+		background: url("@{baseImagePath}/i/resolutioncenter/green_icon_checkmark.png") 16px 4px no-repeat;
+	}
+}
+
+#orderStatusMeterEscalation {
+	background-image: url("@{baseImagePath}/i/resolutioncenter/orderStatusMeterEscalation.png");
+}

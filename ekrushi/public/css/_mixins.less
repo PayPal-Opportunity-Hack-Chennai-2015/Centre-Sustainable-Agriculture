@@ -1,0 +1,29 @@
+// Resolution Center Mixins
+
+.spinner-graphic() {
+	background-image: url("@{baseImagePath}/i/resolutioncenter/icon_loadingGraphic_25x25_90.gif");
+	background-repeat: no-repeat;
+	background-position: left;
+	padding-left: 35px;
+	min-height: 25px;
+}
+
+.secondary-text() {
+	font-size: @font-size-base - 1;
+	line-height: 18px;
+}
+
+.unselectable() {
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.border-radius(@radius: 5px) {
+	border-radius: @radius;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}

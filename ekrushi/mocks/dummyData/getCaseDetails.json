@@ -1,0 +1,55 @@
+{
+	"cases": [{
+		"name": "default",
+		"response": {
+			"statusCode": 200,
+			"body": {
+				"_type": "ASF::Service::ResponseVO",
+				"service": "DisputeResolutionService",
+				"operation": "get_case_details",
+				"requestedVersion": "1.0.0",
+				"actualVersion": "1.0.0",
+				"serverInfo": "disputeresolutionserv:get_case_details&CalThreadId=237&TopLevelTxnStartTime=14c5b510bfb&Host=stage2dev354.qa.paypal.com&pid=4568",
+				"result": {
+					"_type": "Risk::GetCaseDetailsResponse",
+					"caseInfo": {
+						"_type": "Risk::CaseInfoSummaryVO",
+						"caseId": "PP-000-001-150-803",
+						"type": "10",
+						"disputeReason": [1],
+						"snadBuyerPurchasedUrl": "",
+						"sellerOfferInfo": {
+							"_type": "Risk::OfferInfoVO",
+							"offerStatus": 0
+						},
+						"buyerOfferInfo": {
+							"_type": "Risk::OfferInfoVO",
+							"offerStatus": 0
+						},
+						"sellerInvoiceId": "",
+						"sellerPhotoEvidenceEmail": "",
+						"timeCreated": "1427461168",
+						"timeClosed": "0",
+						"status": "10"
+					},
+					"transactionDetails": {
+						"_type": "Risk::DisputedTransactionInfoSummaryVO",
+						"encryptedSellerTransactionId": "185205505X624480R",
+						"encryptedBuyerTransactionId": "35J69911AW164590K",
+						"disputedAmount": {
+							"code": "USD",
+							"amount": "-1700"
+						}
+					},
+					"previousRefunds": [],
+					"disputedItems": [],
+					"caseOutcome": "6011001",
+					"status": {
+						"_type": "Risk::DisputeResponseVO",
+						"returnCode": "0"
+					}
+				}
+			}
+		}
+	}]
+}

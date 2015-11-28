@@ -1,0 +1,107 @@
+.alert {
+	&.check {
+		background-image: url("@{baseImagePath}/i/resolutioncenter/sprite_system_messaging_icons.png");
+		background-repeat: no-repeat;
+		background-position: 20px -268px;
+		padding-left: 50px;
+	}
+}
+
+.alert-icon {
+	&.img {
+		background-image: url("@{baseImagePath}/i/resolutioncenter/sprite_system_messaging_icons.png");
+		background-repeat: no-repeat;
+		background-position: 5px -282px;
+		padding-left: 30px;
+		padding-top:   3px;
+		color: #d2322d;
+	}
+}
+
+.alert, .alert a {
+	font-size: @font-size-base - 2;
+}
+
+.alert-info { /* Blue w/no icon (currently) */
+	background-color: #F4F8FB;
+	border-color: #CEE0EB;
+	color: #444;
+	&.check {
+		background-image: none;
+		padding-left: inherit;
+	}
+	.icon {
+		font-size: 1.8em;
+	}
+}
+
+.alert-common-border{
+	border-bottom: 1px solid #ccc;
+}
+
+.alert-confirmation { /* Green w/check icon */
+	background-color: #ebf5ed;
+	border-color: #c1e7c1;
+	color: #444;
+	&.check {
+		background-position: 20px 15px;
+	}
+}
+
+.alert-warning { /* Yellow w/exclamation icon */
+	background-color: #fdf7e0;
+	border-color: #eeddaf;
+	color: #444;
+	&.check {
+		background-position: 20px -123px;
+	}
+}
+
+.alert-refund-requested {
+	margin-bottom: 10px;
+	padding: 0px 0px 15px 30px;
+	border-bottom: 1px solid #ccc;
+	border-radius: 0;
+	color: #777;
+	&.icon {
+		background: url("@{baseImagePath}/i/resolutioncenter/sprite_messages_icons.png") no-repeat 0 -70px;
+	}	
+}
+
+.alert-fast-track-accept-confirmation { /* white w/check icon */
+	margin-bottom: 10px;
+	padding: 0px 0px 10px 30px;
+	border-bottom: 1px solid #ccc;
+	border-radius: 0;
+	color: #777;
+	&.check {
+		padding-left: 30px;
+		background-position: 0px 0px;
+	}
+}
+
+.alert-refund {
+	color: #444;
+	padding: 0;
+	margin-left: 30px;
+	&.check {
+		padding-left: 35px;
+		background-position: 2px -137px;
+	}
+}
+
+.alert-message {
+	span {
+		float: left;
+		margin: -5px 0 0 -5px;
+		&:before{
+			font-size: 1.8em;
+		}
+	}
+	p {
+		padding: 0 0 15px 30px;
+		border-bottom: 1px solid #ccc;
+		border-radius: 0;
+		color: #777;
+	}
+}

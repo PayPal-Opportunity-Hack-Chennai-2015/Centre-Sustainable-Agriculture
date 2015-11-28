@@ -1,0 +1,72 @@
+/******  
+ * Styles for the three different field help messages:
+ * Information, notification, Error
+ * Information is similar to a tooltip on a form (blue)
+ * Notification is an error caught on client side validation (yellow)
+ * Error is a backend caught error (red)
+ ******
+ * Page level error is same in style as an Error but no carret
+ * and it sits below the form's main header
+*/
+
+/* TODO: add display:none to errors so that screenreaders do not read it by default */
+
+/* Default state is closed, we add class "open" to a message when we want to open it */
+.help-information, 
+.help-error,
+.help-error:before, 
+.help-error:after, 
+.help-information:before, 
+.help-information:after,
+.page-error,
+.no-js .error-submit {
+	border: 0 none;
+	padding: 0;
+	margin: 0;
+	font-size: 0;
+	max-height: 0;
+	font-size: 0;
+	.transition(max-height .3s ease-in-out);
+}
+
+/* information bubble (blue) */
+.help-information.open, .no-js .help-information {
+  width:95%;
+	.bubble-with-caret();
+	max-height: 20em;
+}
+
+/* notification bubble (yellow) */
+.hasError .help-error.open,
+.passwordSection .hasError .help-information.open{
+  width:95%;
+  .bubble-with-caret(1px solid #efcaca, 0 1px #fff, #f7ebeb, transparent transparent #efcaca, transparent transparent #f7ebeb);
+ 	max-height: 20em;
+}
+
+/* multi field error messages */
+.multiFields .help-error.open,
+.multiFields .help-information.open,
+.multiFields .submitted .help-error.open,
+.multiFields .submitted .help-information.open {
+	margin:7px 0 10px;
+}
+
+/* password bubble interaction  */
+.help-information > ul,
+.help-error > ul {
+	margin: 0;
+}
+
+.help-information > ul li,
+.help-error > ul li {
+	margin: 5px 0;
+	list-style: none;
+}
+
+/* page error styles*/
+.page-error.open {
+	.bubble(1px solid #efcaca, 0 1px #fff, #f7ebeb);
+	margin: 0 0 10px;
+	max-height: 500px;
+}

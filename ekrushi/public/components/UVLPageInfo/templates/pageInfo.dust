@@ -1,0 +1,28 @@
+{#sys}
+    {#pageInfo}
+        <!--
+            Script info: script: {script}, template:  {templateName}, date: {templateDate}, country: {countryCode}, language: {languageCode}
+            web version: {webVersion}
+            content version: {contentVersion}
+            hostname : {hostName}
+            rlogid : {rlogid}
+        -->
+    {/pageInfo}
+{/sys}
+{#context}
+    {#pageInfo}
+        <!--
+            Script info: script: {script}, template:  {templateName}, date: {date}, country: {locality.country}, language: {locality.language} {space}
+            web version: {webVersion} content version: {contentVersion} {space}
+            hostname : {hostName} rlogid : {rlogId} {space}
+            {#debug}
+                [corpOnly:start] {space}
+                meta : yes {space}
+                {#scm}
+                    scm : {gitUrl}||{gitBranch}||{gitCommit} {space}
+                {/scm}
+                [corpOnly:end]
+            {/debug}
+        -->
+    {/pageInfo}
+{/context}

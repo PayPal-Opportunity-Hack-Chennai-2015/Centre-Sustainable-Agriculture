@@ -1,0 +1,14 @@
+{!
+	Header navigation actions for Merchant, passed to px-nav-generic component
+!}
+<ul class="px-nav-actions">
+	<li>
+		<a href="{@pre type="content" key="px-nav-merchant-actions.settings.link"/}" role="button" class="button secondary small">
+			<span class="settings-icon"></span>
+			{@pre type="content" key="px-nav-merchant-actions.settings.text"/}
+		</a>
+	</li>
+	<li>
+		<a href="{@pre type="content" key="px-nav-merchant-actions.logout.link"/}" role="button" class="button secondary small">{@pre type="content" key="px-nav-merchant-actions.logout.text"/}</a>
+	</li>
+</ul>

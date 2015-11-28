@@ -1,0 +1,869 @@
+@import "_modules/alerts";
+@import "_view/overlay";
+.container{
+    margin-top:20px;
+}
+@media only screen and (min-width: 768px) {
+    .heading, .main-content{
+        max-width:460px;
+    }
+}
+.pageBanner{
+    margin-bottom:2rem;
+    width:100%;
+}
+.headding4{
+        text-align:center;
+        margin:2rem 0;
+        font-weight:bold;
+    }
+
+.table-greyborder{
+        border-radius:3px;
+        border:1px solid #ced8e3;
+        -webkit-border-radius:3px;
+        -moz-border-radius:3px;
+        -ms-border-radius:3px;
+        background:#f8f8f8;
+        padding:12px;
+        margin:0 0 20px 0;
+        td, th{
+            padding:10px;
+            text-align:left;
+            color:#2C2E2F;
+            vertical-align:top;
+        }
+        tr:last-child{
+            border-bottom:0px none;
+        }
+        .table{
+            margin-bottom:0;
+            tr{
+                border-bottom:1px solid #dddddd;
+            }
+            tr:last-child{
+                border-bottom:0px none;
+            }
+            td{
+                border:none;
+            }
+        }
+    }
+
+    .tableHeader{
+        border-bottom:1px solid #cbd2d6 !important;
+        padding:10px 0 7px 0;
+    }
+
+#disputesView {
+    font-family: "Helvetica Neue", "Helvetica" , "sans-serif";
+    font-weight: normal;
+    font-size: 1.5rem;
+    cursor: default;
+    padding-top:20px !important;
+    .icon{
+    display:inline-block;
+    }
+    a {
+        font-weight: normal;
+        font-size:15px;
+        outline:none;
+    }
+    .center{
+        text-align:center;
+    }
+    .block{
+        display:block;
+    }
+    .optionText{
+        color:#ccc;
+    }
+    .redDesc{
+        color:#d56629;
+    }
+    .smallFont{
+        font-size:1.2rem;
+    }
+    .greyDesc {
+        color: #6c7378;
+    }
+    .linkText{
+        color:#0079c1;
+    }
+    .holdInfo{
+        font-size:12px;
+    }
+    .valign {
+        position:absolute;
+        right:1rem;
+        top:48%;
+    }
+    .arrowAlign{
+        position:absolute;
+        margin-top:10px;
+    }
+    .prev-widget{
+        margin-left:70px;
+    }
+    .close{
+        margin-top:30px;
+    }
+    .noBdr{
+        border-top-left-radius:0px !important;
+        border-bottom-left-radius:0px !important;
+    }
+    #transactionDetails{
+        .heading{
+            margin-bottom:40px;
+        }
+    }
+    .bdr-btm{
+        border-bottom:1px solid #CBD2D6;
+        margin-bottom:20px;
+        padding-bottom:20px;
+    }
+    .refundTable{
+        margin-top:25px;
+    }
+    .yourResponseBdr{
+        border-top:1px solid #CBD2D6;
+        padding-top:20px;
+        td{
+            word-break:break-all;
+        }
+    }
+    .yourResponseHeader{
+            border-bottom:0px none;
+            padding:10px 0 0px 0;
+    }
+    .table-noBg {
+        margin-top:16px;
+
+        td, .tableHeader {
+            text-align:left;
+            color:#2C2E2F;
+            vertical-align:top;
+            padding:3px 0;
+        }
+    }
+    /* overwriting vx pattern*/
+    .vx_alert-warning, .icon-small{
+        &::before{
+            font-size:2.4rem ;
+        }
+    }
+    .vx_alert{
+        p{
+            padding-bottom:0;
+        }
+    }
+    .vx_btn-secondary {
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    }
+    .vx_checkbox label:before {
+         border:1px solid #ccc;
+     }
+    .vx_btn-small{
+        padding:0;
+        font-size:15px;
+        line-height:44px;
+        max-height:44px;
+        min-height:44px
+    }
+    .vx_btn-secondary{
+        margin-top:10px;
+    }
+    /* overwriting vx pattern ends*/
+    .disputeTotal{
+        text-align:right;
+        margin-right:15px;
+        span{
+            padding-left:20px;
+            width:85px;
+            display:inline-block;
+        }
+    }
+
+    .special{
+        .list-group-item{
+        border:0px none;
+        border-top:1px solid #ddd;
+        padding:2rem;
+        border-radius:0px;
+        p{
+            padding-bottom:0px!important;
+            padding-right:2rem;
+        }
+        }
+        .list-group-item:last-child{
+            border-bottom:1px solid #ddd;
+        }
+    }
+    input[type="text"],select {
+        height: 44px;
+        width: 460px;
+    }
+    #proofOfRefundSearchTransactions, #submit_proof_of_shipment, #caseCloseRefund {
+        #transacitonSearchBlock, #shippingCarrierType, #showShipping {
+            margin-bottom:20px;
+
+            button {
+                 text-shadow:none;
+                 box-shadow:none;
+                 outline:none;
+            }
+            button:hover, button:focus {
+                color: #333;
+                background-image:none ! important;
+                background-color: #e6e6e6;
+                border:1px solid #ccc;
+
+            }
+            .btn{
+                text-align:left;
+                border-bottom-left-radius:3px;
+                border-top-left-radius:3px;
+            }            
+            .caret {
+                float: right;
+                position: absolute;
+                right: 5px;
+                top: 45%;
+                z-index: 1000;
+            }
+
+            .btn-default {
+                height:30px;
+                line-height:30px;
+                width:130px;
+                text-align:left;
+            }
+            .input-group {
+                 .form-control:last-child{
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                }
+                .form-control {
+                    position: relative;
+                    z-index: 2;
+                    float: left;
+                    height:44px;
+                    line-height:44px;
+                }
+            }
+        }
+        #trackingNumber{
+            width:99%;
+            border-radius: 4px;
+
+        }
+        #filterValue{
+            width:83%;
+            border-radius: 4px;
+        }
+     }
+    #userComments{
+        border-radius: 5px;
+        height: 140px;
+        resize:none;
+    }
+    #carrier{
+        /*width: 212px;*/
+        width:35%;
+        border-radius: 5px;
+        float:left;
+    }
+    .button:hover, button:hover, button:focus, .button:focus,  .button:active, button:active{
+        text-shadow:none;
+        box-shadow:none;
+        border:0px none;
+        outline:none;
+    }
+    .primary{
+        background-color:#009CDE;
+        background-image: none;
+        border:0px none;
+        text-shadow:none;
+        :hover{
+            background-color:#009CDE;
+        }
+    }
+    .viewCaseActivity{
+        margin:25px 0 10px 0;
+        font-size:15px;
+    }
+    p{
+        margin:0;
+        padding:0 0 21px 0;
+        &.sep {
+            padding: 30px 0;
+        }
+    }
+    .address{
+        word-break:break-all;
+    }
+    h4{
+        margin-bottom:18px;
+        font-weight:300;
+        font-size:2rem;
+    }
+    .loading {
+        background: url("https://www.paypalobjects.com/webstatic/i/ex_ce2/icon/icon_loadingGraphic_42x42_2011_10_24.gif") no-repeat scroll center center #FFFFFF;
+        position: inherit;
+        top: 0;
+        height: inherit;
+        width: inherit;
+        z-index: 3041;
+        opacity: 0.8;
+    }
+    .loadingCase {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .caseInfoForSeller{
+        p{
+            font-weight:bold;
+            padding:0;
+        }
+        span{
+            display:block;
+            padding-top:5px;
+            font-weight:normal;
+        }
+    }
+    #submit_proof_of_shipment, #otherProofOfRefund, #otherProof, #uploadFile{
+        input[type="text"].validationFailed, select.validationFailed{
+            border:1px solid #ba1727;
+            background-image: url("https://www.paypalobjects.com/webstatic/i/resolutioncenter/sprite_system_messaging_icons.png");
+            background-repeat: no-repeat;
+            background-position: 389px -268px;
+        }
+        p{
+            padding-bottom:15px;
+        }
+        select.validationFailed{
+            background-position: 365px -268px;
+        }
+        textarea.validationFailed{
+            border:1px solid #ba1727;
+        }
+        a.validationFailed{
+            background-image: url("https://www.paypalobjects.com/webstatic/i/resolutioncenter/sprite_system_messaging_icons.png"), url("../img/paperclip.png");
+            background-repeat: no-repeat no-repeat;
+            background-position: right -282px, 0 0;
+            color:#ba1727;
+            padding-right:23px;
+        }
+        div.validationFailed{
+            border-color: #ba1727;
+        }
+        .radio-buttons, .radio-options{
+        padding:0 0 10px 0;
+        }
+        .radio-buttons{
+            margin-bottom:10px;
+        }
+        .radio-options{
+            margin-bottom:20px;
+        }
+    }
+    /* styles for error messages*/
+    #errorMessages{
+        margin-bottom:20px;
+        .alert.check{
+        background-position:10px -276px;
+        }
+        p{
+        padding:7px 0 7px 37px;
+        }
+    }
+    .more-info{
+        color:#999999;
+        font-size:.8em;
+        a{
+            font-size:1em;
+        }
+    }
+    table {
+        padding-top:4px;
+        .data-key {
+            font-weight: bold;
+            text-align: right;
+            padding-right: 15px;
+            vertical-align: top;
+        }
+        .data-width{
+            width:40%;
+            min-width:145px;
+        }
+    }
+    #caseCloseRefund {
+        #shippingAdd{
+            display:block;
+            width:100%;        
+        }
+        #showShipping{
+            .caret {
+                float: right;
+                position: absolute;
+                right: 15px;
+                top: 40%;
+                z-index: 1000;
+            }
+            .btn{
+                text-align:left;
+                border-bottom-left-radius:3px;
+                border-top-left-radius:3px;
+            }
+            .btn-default {
+                height:30px;
+                line-height:30px;
+                width:90%;
+                padding: 6px 30px 6px 12px;
+            }            
+            .input-group {
+                 .form-control:last-child{
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                }
+                .form-control {
+                    position: relative;
+                    z-index: 2;
+                    float: left;
+                    height:44px;
+                    line-height:44px;
+
+                }
+            }            
+        }
+       select{
+            height:40px;
+            width:100%;
+        }
+        .amount{
+            margin-top:2px;
+            text-align:right;
+            float:right;
+        }        
+        p {
+         padding:10px 0 10px 0;
+        }
+
+        .greyText{
+            color: #6c7378;
+        }
+
+        .indentedNotes{
+            padding: 0 10px 10px 30px;
+            font-size: 12px;
+        }
+
+        .ellipsisText {
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+         }
+
+    }
+    textarea {
+        /*min-width: 445px;*/
+        width:100%;
+    }
+    input[type="text"],select, textarea {
+        color: #666666;
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        padding:4px 6px;
+    }
+    .heading{
+        .learn-more{
+            color:#999999;
+            font-size:2.5rem;
+        }
+        h1 {
+            margin-top:50px;
+        }
+        span {
+            font-size: 1.5rem;
+            color: #6c7378;
+        }
+        p{
+            margin:30px 0 9px 0;
+        }
+        p.thanksHeaderImage{
+            height:90px;
+            width:90px;
+            margin-bottom:30px;
+            background: url("https://www.paypalobjects.com/webstatic/i/resolutioncenter/sprite_disputes.png") no-repeat 0 -185px;
+        }
+    }
+    .heading, .main-content {
+        /*max-width: 460px;*/
+        border: medium none;
+        margin: 0 auto;
+    }
+    .main-content{
+        padding-bottom:40px;
+    }
+    .message-note {
+        border: medium none;
+        background-color: inherit;
+        font-size: inherit;
+        padding-left: 25px;
+        margin-bottom: 10px;
+        height:22px;
+        &.check {
+            background-position: 0px -137px;
+        }
+    }
+    .secondary{
+        background-color: #e3e6ea;
+        background-image: none;
+        border:0 none;
+    }
+    .widest{
+        min-width:460px;
+        width: 90%;
+        margin-top: 10px;
+    }
+    .capitalize {
+        text-transform: lowercase;
+        display:block;
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+    ul.help-info {
+        padding:0 0 20px 0;
+        margin-bottom: 0;
+
+        li{
+            padding:0 0 0 15px;
+            line-height:20px;
+            color:#FFFFFF;
+            margin-left:15px;
+        }
+    }
+    .upload-link {
+        background: url("../img/resolutioncenter/sprite_achcb_icons.png") no-repeat 0px -750px;
+        padding-left: 30px;
+        padding-bottom: 5px;
+    }
+    .toggle-view {
+        margin:20px 0 10px 0;
+        p {
+            padding: 0 0 10px;
+        }
+        ul {
+            padding: 0 0 15px 15px;
+            font-size: 1.3rem;
+        }
+    }
+    #upload-area {
+        background-color:#f7f9fa;
+        border:1px dashed #9da3a6;
+        color:#6C7378;
+        cursor: pointer;
+        height: 140px;
+        border-radius: 5px;
+        a{
+            color:#6C7378;
+        }
+        #desktopUploadArea {
+            height: 100%;
+            background-color:#f7f9fa;
+            border:1px dashed #9da3a6;
+            color:#6C7378;
+            a{
+                color:#6C7378;
+            }
+        }
+        #desktopUploadButton {
+            background: url("https://www.paypalobjects.com/webstatic/i/resolutioncenter/sprite_disputes.png") no-repeat 206px -292px;
+            display: block;
+            height: 50px;
+            text-align: center;
+            width: 100%;
+            padding-top: 85px;
+        }
+    }
+    ul.upload-list {
+        list-style-type: none;
+        padding-left: 0;
+        li {
+            border-bottom: 1px solid #CCCCCC;
+            color: #666666;
+            padding: 10px 0;
+            overflow: hidden;
+            span {
+                float: right;
+                &.fileInfo {
+                    float: left;
+                }
+            }
+        }
+    }
+    #results,#refunds{
+        overflow-y:auto;
+        height:270px;
+        margin-bottom:15px;
+    }
+    .searchNoResult{
+        margin-bottom:25px;
+        background-color:#f9f9f9;
+        text-align:center;
+        padding:5px;
+    }
+    ul.searchList{
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+        margin-bottom: 8px;
+        li{
+            padding-top: 15px;
+            width: 100%;
+            padding-bottom: 5px;
+            input[type="checkbox"]{
+                width:auto;
+                line-height: normal;
+                margin: 4px 0 0 0;
+                cursor: pointer;
+                padding:0;
+                height: auto;
+            }
+            span{
+                margin-right: 15px;
+                display: inline-block;
+                word-break: break-all;
+                vertical-align: top;
+            }
+            span.sentto-column{
+                width:55%;
+            }
+        }
+        li:nth-child(odd){
+            background-color: #f9f9f9;
+        }
+        li:nth-child(even){
+            background-color: #fff;
+        }
+        .amount{
+            margin-top:2px;
+            text-align:right;
+            float:right;
+        }
+    }
+    .otheroption{
+        margin:10px 0;
+        .seperator{
+            position:relative;
+            text-align: center;
+            span {
+                background:white;
+                padding:0 15px;
+            }
+            :before {
+                border-top: 1px solid #e3e3e3;
+                content: "";
+                margin: 0 auto;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        }
+        p{
+            margin-top:10px;
+            text-align:center;
+        }
+    }
+    #proofOfRefundSearchTransactions{
+        .btnSearch{
+            float: right;
+            width: 45px;
+            height: 45px;
+            background: url("https://www.paypalobjects.com/webstatic/i/resolutioncenter/sprite_disputes.png") no-repeat 0 -734px;
+        }
+    }
+    .prev-page, .prev-widget{
+        .iconArrowLeft{
+            background: url("https://www.paypalobjects.com/webstatic/i/resolutioncenter/sprite_disputes.png") no-repeat 0 -492px;
+            width: 15px;
+            height: 25px;
+            float: left;
+        }
+        a{
+        vertical-align:middle;
+        margin-top:4px;
+        position:absolute;
+        }
+        span{
+            &.icon{
+            line-height:1;
+            }
+        }
+    }
+    .highlight-section{
+        background-color: #f9f9f9;
+        padding: 20px;
+        width: 100%;
+        a.secondary{
+            min-width:0;
+            width:100%;
+            pointer-events: none;
+            color: #AFAF97;
+            background-color: #E8EDF1;
+        }
+        ul li div.checkboxCondition label{
+            font-weight:normal;
+        }
+        a.checkboxChecked{
+            pointer-events: all;
+            color: #333;
+            background-color: #e3e6ea;
+        }
+        #buyerNotDisputing{
+            width: 17px;
+            line-height: normal;
+            margin: 4px 0 0 0;
+            cursor: pointer;
+            padding: 0;
+            height: 17px;
+        }
+        .buyerNotDisputingText{
+            vertical-align: text-bottom;
+            margin-left: 5px;
+        }
+
+    }
+    .tracking-number{
+        padding:0 0 5px 20px;
+        li{
+            padding-bottom:2px;
+        }
+    }
+    #trackLabel, #proofoptionLabel, .uploadLabel, .small{
+        padding: 0 0 5px 0;
+    }
+    .buttonSubmit{
+        padding: 5px 0 0 0;
+    }
+    /* style for case activity page*/
+    #caseActivity{
+        ul{
+            padding:0;
+            margin-top:30px;
+            li{
+                list-style:none;
+                &.activity{
+                    padding:20px 0 0 0px;
+                    line-height:1.35em;
+                    &::before{
+                        border-left:2px solid #fff;
+                        content: "";
+                        position:absolute;
+                        height:18px;
+                        margin:-20px 0 2px 20px;
+                    }
+                    .iconCheckmark{
+                        background: url("https://www.paypalobjects.com/webstatic/i/resolutioncenter/sprite_disputes.png") no-repeat 0 -64px #333;
+                        height:44px;
+                        width:44px;
+                    }
+                    .iconEmail{
+                        background: url("https://www.paypalobjects.com/webstatic/i/resolutioncenter/sprite_disputes.png") no-repeat 0 -0px #333;
+                        height:44px;
+                        width:44px;
+                    }
+                    div{
+                        padding-left:36px;
+                        border-left:2px solid #fff;
+                        margin-left:20px;
+                        min-height:40px;
+                        margin-top:-45px;
+                    }
+                    span{
+                        color:#9da3a6;
+                    }
+                }
+            }
+        }
+    }
+    /* style for new outcomes table view*/
+    .outcomesHeader{
+        h1{
+            font-weight:normal;
+            margin:0;
+            padding:0;
+            font-size:3.2rem;
+            text-align:center;
+        }
+        p.thanksHeaderImage{
+            height:90px;
+            width:90px;
+            background: url("https://www.paypalobjects.com/webstatic/i/resolutioncenter/sprite_disputes.png") no-repeat 0 -185px;
+            margin:30px auto 50px auto;
+        }
+    }
+}
+.loading {
+    background: url("https://www.paypalobjects.com/webstatic/i/ex_ce2/icon/icon_loadingGraphic_42x42_2011_10_24.gif") no-repeat scroll center center #FFFFFF;
+    position:absolute;
+    top: 0;
+    width:100%;
+    z-index: 3041;
+    opacity: 0.8;
+}
+.IL #achCbView {
+    .prev-widget {
+        span {
+            float: left;
+        }
+    }
+    .prev-page {
+        float: left;
+        span {
+            float: left;
+        }
+        a {
+            position: relative;
+        }
+    }
+    #submit_proof_of_shipment, #otherProofOfRefund, #otherProof, #uploadFile{
+        input[type="text"].validationFailed, select.validationFailed{
+            background-position:25px -268px;
+        }
+    }
+    /* styles for case activity page IL language RTL format */
+    #caseActivity ul li{
+        clear:both;
+    }
+    #caseActivity ul li.activity span.icon{
+        display:inline-block;
+        float:right;
+        margin-left:15px;
+        margin-right:0px;
+        position:relative;
+    }
+    #caseActivity ul li.activity div{
+        display:inline-block;
+        border-right:1px solid #9da3a6;
+        border-left:0 none;
+        margin:0 -35px 0 0;
+        padding:0 36px 0 0;
+        width:405px;
+        float:right;
+    }
+    #caseActivity ul li.activity::before{
+        margin:-20px 20px 2px 18px;
+        -moz-margin-start:-405px;
+    }
+}

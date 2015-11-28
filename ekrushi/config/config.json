@@ -1,0 +1,397 @@
+{
+
+	"requestURI": "/ekrushi",
+
+	"legacyURI": "/cgi-bin/webscr?cmd=_complaint-view",
+
+	"i18n": {
+		"contentPath": "path:./locales",
+		"fallback": "en-US"
+	},
+
+	"services": {
+		"servicecore": {
+			"rejectUnauthorized": false,
+			"asfSchemaOverride": true
+		},
+		"disputeresolutionserv-paypal": {
+			"socketTimeout": 90000
+		},
+		"disputeresolutionserv": {
+			"socketTimeout": 90000
+		}
+	},
+
+	"monitor": {
+		"toAddr": "DL-PayPal-ResCtr-Rewrite-Team@paypal.com",
+		"stageToAddr": "DL-PayPal-ResCtr-Rewrite-Team@paypal.com"
+	},
+
+	// "cal": {
+	//      "enableBuffering": false
+	// },
+
+	"express": {
+		"view engine": "js",
+		"view cache": false,
+		"views": "path:./.build/templates",
+		"mountpath": "/resolutioncenter"
+	},
+
+	"view engines": {
+		"js": {
+			"module": "engine-munger",
+			"renderer": {
+				"method": "js",
+				"arguments": [{
+					"cache": true,
+					"helpers": [
+						"ppdustjs-filters-secure",
+						"dustjs-helpers",
+						"dusthelpers-supplement",
+						"./lib/helper-formatDate"
+					]
+				}, {
+					"views": "config:express.views",
+					"view engine": "config:express.view engine",
+					"i18n": "config:i18n"
+				}]
+			}
+		}
+	},
+
+	"middleware": {
+
+		"static": {
+			"module": {
+				"arguments": ["path:./.build"]
+			}
+		},
+
+		// Add PayPal middleware after static
+
+		"expressView": {
+			"priority": 100,
+			"enabled": true,
+			"module": {
+				"name": "engine-munger/lib/expressView"
+			}
+		},
+
+		"encryptedcookies": {
+			"enabled": true,
+			"priority": 111,
+			"module": {
+				"name": "encryptedcookies-paypal",
+				"arguments": [{
+					"encryptionKey": "vault:encrypted_crypt_key",
+					"macKey": "vault:encrypted_mac_key"
+				}]
+			}
+		},
+		"securitycontext": {
+			"enabled": true,
+			"priority": 112,
+			"module": {
+				"name": "securitycontext-paypal"
+			}
+		},
+
+		"auth-paypal": {
+			"enabled": true,
+			"priority": 113,
+			"module": {
+				"name": "auth-paypal",
+				"arguments": [{
+					"cookieEncryptionKey": "vault:encrypted_crypt_key",
+					"cookieMacKey": "vault:encrypted_mac_key"
+				}]
+			}
+		},
+
+		// Add PayPal middleware before the router
+
+
+		"locale": {
+			"priority": 113,
+			"enabled": true,
+			"module": {
+				"name": "locale",
+				"arguments": [{
+					"griffin":{"date":true, "number":true},
+					"localeClamp": {
+						"root": "locales",
+						"fallbacks": {
+							"BN": ["APAC_ABCZ"],
+							"BT": ["APAC_ABCZ"],
+							"FM": ["APAC_ABCZ"],
+							"KH": ["APAC_ABCZ"],
+							"KI": ["APAC_ABCZ"],
+							"LA": ["APAC_ABCZ"],
+							"LK": ["APAC_ABCZ"],
+							"MH": ["APAC_ABCZ"],
+							"MN": ["APAC_ABCZ"],
+							"MV": ["APAC_ABCZ"],
+							"NF": ["APAC_ABCZ"],
+							"NP": ["APAC_ABCZ"],
+							"NR": ["APAC_ABCZ"],
+							"NU": ["APAC_ABCZ"],
+							"PG": ["APAC_ABCZ"],
+							"PN": ["APAC_ABCZ"],
+							"SB": ["APAC_ABCZ"],
+							"TO": ["APAC_ABCZ"],
+							"TV": ["APAC_ABCZ"],
+							"VU": ["APAC_ABCZ"],
+							"WS": ["APAC_ABCZ"],
+							"FJ": ["APAC_ABCZ"],
+							"PW": ["APAC_ABCZ"],
+							"AI": ["CLAC_ABCZ"],
+							"AN": ["CLAC_ABCZ"],
+							"AW": ["CLAC_ABCZ"],
+							"BO": ["CLAC_ABCZ"],
+							"FK": ["CLAC_ABCZ"],
+							"GY": ["CLAC_ABCZ"],
+							"MS": ["CLAC_ABCZ"],
+							"NI": ["CLAC_ABCZ"],
+							"PY": ["CLAC_ABCZ"],
+							"SR": ["CLAC_ABCZ"],
+							"VC": ["CLAC_ABCZ"],
+							"VG": ["CLAC_ABCZ"],
+							"AG": ["CLAC_ABCZ"],
+							"BB": ["CLAC_ABCZ"],
+							"BM": ["CLAC_ABCZ"],
+							"BS": ["CLAC_ABCZ"],
+							"BZ": ["CLAC_ABCZ"],
+							"CL": ["CLAC_ABCZ"],
+							"CO": ["CLAC_ABCZ"],
+							"CR": ["CLAC_ABCZ"],
+							"DM": ["CLAC_ABCZ"],
+							"DO": ["CLAC_ABCZ"],
+							"EC": ["CLAC_ABCZ"],
+							"GD": ["CLAC_ABCZ"],
+							"GT": ["CLAC_ABCZ"],
+							"HN": ["CLAC_ABCZ"],
+							"JM": ["CLAC_ABCZ"],
+							"KN": ["CLAC_ABCZ"],
+							"KY": ["CLAC_ABCZ"],
+							"LC": ["CLAC_ABCZ"],
+							"PA": ["CLAC_ABCZ"],
+							"PE": ["CLAC_ABCZ"],
+							"SV": ["CLAC_ABCZ"],
+							"TC": ["CLAC_ABCZ"],
+							"TT": ["CLAC_ABCZ"],
+							"UY": ["CLAC_ABCZ"],
+							"VE": ["CLAC_ABCZ"],
+							"VA": ["EMEA_ABCZ"],
+							"BG": ["EMEA_ABCZ"],
+							"CY": ["EMEA_ABCZ"],
+							"CZ": ["EMEA_ABCZ"],
+							"EE": ["EMEA_ABCZ"],
+							"FI": ["EMEA_ABCZ"],
+							"GF": ["EMEA_ABCZ"],
+							"GI": ["EMEA_ABCZ"],
+							"GP": ["EMEA_ABCZ"],
+							"GR": ["EMEA_ABCZ"],
+							"HU": ["EMEA_ABCZ"],
+							"IE": ["EMEA_ABCZ"],
+							"LI": ["EMEA_ABCZ"],
+							"LT": ["EMEA_ABCZ"],
+							"LU": ["EMEA_ABCZ"],
+							"LV": ["EMEA_ABCZ"],
+							"MQ": ["EMEA_ABCZ"],
+							"MT": ["EMEA_ABCZ"],
+							"RE": ["EMEA_ABCZ"],
+							"RO": ["EMEA_ABCZ"],
+							"SI": ["EMEA_ABCZ"],
+							"SK": ["EMEA_ABCZ"],
+							"SM": ["EMEA_ABCZ"],
+							"AM": ["EMEA_ABCZ"],
+							"AO": ["EMEA_ABCZ"],
+							"AZ": ["EMEA_ABCZ"],
+							"BF": ["EMEA_ABCZ"],
+							"BI": ["EMEA_ABCZ"],
+							"BJ": ["EMEA_ABCZ"],
+							"BY": ["EMEA_ABCZ"],
+							"CD": ["EMEA_ABCZ"],
+							"CG": ["EMEA_ABCZ"],
+							"CI": ["EMEA_ABCZ"],
+							"CK": ["EMEA_ABCZ"],
+							"CM": ["EMEA_ABCZ"],
+							"CV": ["EMEA_ABCZ"],
+							"DJ": ["EMEA_ABCZ"],
+							"EG": ["EMEA_ABCZ"],
+							"ER": ["EMEA_ABCZ"],
+							"ET": ["EMEA_ABCZ"],
+							"GA": ["EMEA_ABCZ"],
+							"GE": ["EMEA_ABCZ"],
+							"GM": ["EMEA_ABCZ"],
+							"GN": ["EMEA_ABCZ"],
+							"GW": ["EMEA_ABCZ"],
+							"KG": ["EMEA_ABCZ"],
+							"KM": ["EMEA_ABCZ"],
+							"KZ": ["EMEA_ABCZ"],
+							"MC": ["EMEA_ABCZ"],
+							"MD": ["EMEA_ABCZ"],
+							"ME": ["EMEA_ABCZ"],
+							"MG": ["EMEA_ABCZ"],
+							"MK": ["EMEA_ABCZ"],
+							"ML": ["EMEA_ABCZ"],
+							"MR": ["EMEA_ABCZ"],
+							"MU": ["EMEA_ABCZ"],
+							"NA": ["EMEA_ABCZ"],
+							"NE": ["EMEA_ABCZ"],
+							"NG": ["EMEA_ABCZ"],
+							"PM": ["EMEA_ABCZ"],
+							"RS": ["EMEA_ABCZ"],
+							"RW": ["EMEA_ABCZ"],
+							"SH": ["EMEA_ABCZ"],
+							"SJ": ["EMEA_ABCZ"],
+							"SL": ["EMEA_ABCZ"],
+							"SN": ["EMEA_ABCZ"],
+							"SO": ["EMEA_ABCZ"],
+							"ST": ["EMEA_ABCZ"],
+							"SZ": ["EMEA_ABCZ"],
+							"TD": ["EMEA_ABCZ"],
+							"TG": ["EMEA_ABCZ"],
+							"TJ": ["EMEA_ABCZ"],
+							"TM": ["EMEA_ABCZ"],
+							"TN": ["EMEA_ABCZ"],
+							"TZ": ["EMEA_ABCZ"],
+							"UA": ["EMEA_ABCZ"],
+							"UG": ["EMEA_ABCZ"],
+							"WF": ["EMEA_ABCZ"],
+							"YE": ["EMEA_ABCZ"],
+							"YT": ["EMEA_ABCZ"],
+							"ZM": ["EMEA_ABCZ"],
+							"ZW": ["EMEA_ABCZ"],
+							"AD": ["EMEA_ABCZ"],
+							"AE": ["EMEA_ABCZ"],
+							"AL": ["EMEA_ABCZ"],
+							"BA": ["EMEA_ABCZ"],
+							"BH": ["EMEA_ABCZ"],
+							"BW": ["EMEA_ABCZ"],
+							"DZ": ["EMEA_ABCZ"],
+							"FO": ["EMEA_ABCZ"],
+							"GL": ["EMEA_ABCZ"],
+							"HR": ["EMEA_ABCZ"],
+							"IS": ["EMEA_ABCZ"],
+							"JO": ["EMEA_ABCZ"],
+							"KE": ["EMEA_ABCZ"],
+							"KW": ["EMEA_ABCZ"],
+							"LS": ["EMEA_ABCZ"],
+							"MA": ["EMEA_ABCZ"],
+							"MW": ["EMEA_ABCZ"],
+							"MZ": ["EMEA_ABCZ"],
+							"NC": ["EMEA_ABCZ"],
+							"OM": ["EMEA_ABCZ"],
+							"PF": ["EMEA_ABCZ"],
+							"QA": ["EMEA_ABCZ"],
+							"SA": ["EMEA_ABCZ"],
+							"SC": ["EMEA_ABCZ"],
+							"ZA": ["EMEA_ABCZ"]
+						}
+					}
+				}]
+			}
+		},
+
+		"decorators": {
+			"priority": 115,
+			"parallel": {
+				"device-detection-paypal": {
+					// Not using now, so disabled
+					"enabled": false,
+					"module": {
+						"name": "device-detection-paypal",
+						"method": "middleware"
+					}
+				},
+
+				"experiementation": {
+					// Not using now, so disabled
+					"enabled": false,
+					"module": "experimentation-paypal"
+				}
+			}
+		},
+		"appsec": {
+			"enabled": false,
+			"priority": 110,
+			"module": {
+				"name": "lusca",
+				"arguments": [
+					{
+						"csp": {
+							"policy": {
+
+								"default-src": "'self' https://*.paypal.com https://*.paypalobjects.com 'unsafe-inline'",
+								"connect-src": "'self' https://*.paypal.com https://*.paypalobjects.com 'unsafe-inline'",
+								"script-src": "'self' https://www.google-analytics.com https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://*.paypalobjects.com https://*.paypal.com:* http://*.paypal.com:* http://paypal.112.2o7.net *.omtrdc.net data: 'unsafe-inline' 'unsafe-eval'",
+								"img-src": "https://www.google-analytics.com https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://*.paypalobjects.com https://*.paypal.com:* http://*.paypal.com:* http://paypal.112.2o7.net *.omtrdc.net data:",
+								"object-src": "'self' https://*.paypal.com https://*.paypalobjects.com",
+								"font-src": "'self' https://*.paypal.com https://*.paypalobjects.com "
+							}
+						},
+						"csrf": true,
+						"xframe": "SAMEORIGIN",
+						"xssProtection": true
+					}
+				]
+			}
+		},
+
+
+		// ResCenter app specific middlewares
+
+		"app-authorize": {
+			"enabled": false,
+			"priority": 116,
+			"route": "/((?!login))*",
+			"module": {
+				"name": "path:./lib/auth",
+				"method": "authorize"
+			}
+		},
+
+
+		"app-errors": {
+			"enabled": true,
+			"priority": 301,
+			"module": {
+				"name": "path:./lib/erroneous",
+				"method": "internalError"
+			}
+		},
+
+		// Update the router config to scan controllers directory
+
+		"router": {
+			"module": {
+				"arguments": [{
+					"directory": "path:./controllers"
+				}]
+			}
+		},
+
+		// Add 404 and 500 handlers after the router
+
+		"fileNotFound": {
+			"enabled": true,
+			"priority": 130,
+			"module": {
+				"name": "kraken-js/middleware/404",
+				"arguments": ["error404"]
+			}
+		},
+
+		"serverError": {
+			// Disabled because using custom error handler
+			"enabled": false,
+			"priority": 140,
+			"module": {
+				"name": "kraken-js/middleware/500",
+				"arguments": ["error500"]
+			}
+		}
+	}
+}
