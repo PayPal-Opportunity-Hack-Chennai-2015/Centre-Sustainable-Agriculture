@@ -1,0 +1,12 @@
+{!
+	This is the nav-consumer component. It consists of the top-level
+	navigation bar seen globally across the consumer-flavored application.
+
+	This is an example of referencing a dust file from another component. There
+	is a required convention of placing component code in the public/components
+	directory of the application.
+!}
+{>"components/px-nav-generic/templates/px-nav-generic"
+	px-nav-logo="components/px-nav-consumer/templates/px-nav-consumer-logo"
+	px-nav-links="components/px-nav-consumer/templates/px-nav-consumer-links"
+	px-nav-actions="components/px-nav-consumer/templates/px-nav-consumer-actions" /}

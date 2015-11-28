@@ -1,0 +1,37 @@
+{
+  "name": "px-nav-consumer",
+  "version": "0.0.6",
+  "authors": [
+    "UIE Components Team"
+  ],
+  "description": "This is the navigation component used for applications that need the Consumer (8Ball) look and feel.",
+  "keywords": [
+    "8ball",
+    "component",
+    "navigation"
+  ],
+  "license": "WTFPL",
+  "homepage": "https://github.paypal.com/UIE-Components/px-nav-consumer",
+  "ignore": [
+    "**/.*",
+    ".editorconfig",
+    ".gitignore",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json",
+    "src",
+    "example"
+  ],
+  "dependencies": {
+    "px-nav-generic": "~0.0.4"
+  },
+  "_release": "0.0.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.6",
+    "commit": "91e273f631a3ea1f51a263e2211100a36ef1492c"
+  },
+  "_source": "git://github.paypal.com/UIE-Components/px-nav-consumer.git",
+  "_target": "~0.0.4",
+  "_originalSource": "px-nav-consumer"
+}

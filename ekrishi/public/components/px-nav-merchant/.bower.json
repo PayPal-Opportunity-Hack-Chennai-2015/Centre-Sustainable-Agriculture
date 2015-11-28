@@ -1,0 +1,36 @@
+{
+  "name": "px-nav-merchant",
+  "authors": [
+    "Tony Broussard",
+    "Venkata Pidathala",
+    "Evgeny Myunster"
+  ],
+  "description": "This is the navigation component used for applications that need the Merchant (Hawk) look and feel.",
+  "keywords": [
+    "hawk",
+    "merchant",
+    "component",
+    "navigation"
+  ],
+  "license": "WTFPL",
+  "homepage": "https://github.paypal.com/UIE-Components/px-nav-merchant",
+  "ignore": [
+    "**/.*",
+    ".editorconfig",
+    ".gitignore",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "px-nav-generic": "~0.0.4"
+  },
+  "_release": "03c417e976",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "03c417e976ceba7ae1f9c9c0f602d330353526cc"
+  },
+  "_source": "git@github.paypal.com:tbroussard/px-nav-merchant.git",
+  "_target": "*",
+  "_originalSource": "git@github.paypal.com:tbroussard/px-nav-merchant.git"
+}

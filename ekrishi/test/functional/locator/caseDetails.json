@@ -1,0 +1,18 @@
+{
+     "viewOpenCases": {
+        "type": "css",
+        "locator": "a[href*='complaint']"
+    },
+    "successViewOpenCases": {
+        "type": "css",
+        "locator": ".disputecase"
+    },
+    "viewCase": {
+        "type": "css",
+        "locator": ".case a[href*='8502']"
+    },
+    "successViewCase": {
+        "type": "css",
+        "locator": "#achCbView"
+    }
+}

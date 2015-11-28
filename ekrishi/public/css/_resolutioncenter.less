@@ -1,0 +1,369 @@
+// Resolution Center Overrides
+
+body, p {
+	color: @text-color;
+}
+
+.px-nav nav {
+	background: transparent;
+}
+
+#content {
+	outline: none;
+	padding: 80px 0 20px;
+}
+.errorImage
+{
+	padding : 6px 30px 6px 12px;
+	background-image: url("@{baseImagePath}/i/resolutioncenter/sprite_system_messaging_icons.png");
+	background-repeat: no-repeat;
+	background-position: 99% -19.5em  ;
+	background-origin: border-box;
+	background-size: auto auto;
+}
+
+.errorImageDropdown
+{
+	padding : 6px 30px 6px 12px;
+	background-image: url("@{baseImagePath}/i/resolutioncenter/sprite_system_messaging_icons.png");
+	background-repeat: no-repeat;
+	background-position: 94% -19.5em  ;
+	background-origin: border-box;
+	background-size: auto auto;
+}
+
+label.normal{
+	font-weight:normal;
+	margin: 0.7em 0px 0px;
+	position:relative;
+	left:415px;
+	bottom:55px;
+}
+
+h1 {
+	color: @headings-color;
+	font-size: @font-size-base + 4;
+}
+h2, h2 a, h2 a:link, h2 a:visited {
+	color: @headings-color;
+	font-size: @font-size-base + 1;
+}
+h3, h3 a, h3 a:link, h3 a:visited {
+	color: @headings-color;
+	font-size: @font-size-base;
+}
+h4 {
+	color: @headings-color;
+	font-size: @font-size-base - 1;
+	margin-bottom: 5px;
+}
+h5 {
+	color: @headings-color;
+	font-size: @font-size-base - 1;
+}
+
+a:link, a:visited {
+	font-size: @font-size-base;
+	font-weight: normal;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1001;
+}
+
+.hidden-aria {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+// Application container
+
+#resolutionCenter {
+
+	div[id$="View"][class*="section"] {
+		margin: 0;
+		min-height: 500px;
+		padding: 9px 40px;
+	}
+
+	input[type="file"] {
+		line-height: normal;
+	}
+	input[type="text"] {
+		.border-radius(@border-radius-base);
+		border: 1px solid @input-border-color;
+		padding: @input-padding - 2;
+	}
+
+	label {
+		font-size: @font-size-base;
+	}
+
+	legend {
+		// we treat legends as a sub-subhead
+		margin: 0;
+		font-weight: bold;
+		font-size: @font-size-base - 1;
+		border-bottom: 0;
+		line-height: 1.5em;
+	}
+
+	hr {
+		margin: 6px 0;
+		border-top: 1px solid #e2e2e2;
+	}
+
+	// form-inline class used to override common form styles
+	dl.form-inline {
+		margin: @line-height-base 0;
+
+		dt {
+			font-weight: normal;
+		}
+		dd {
+			margin-left: 0;
+		}
+	}
+
+	fieldset.form-inline {
+		border: none;
+		margin: 1.2em 0;
+		padding: 0;
+
+		legend {
+			font-weight: normal;
+			font-size: @font-size-base;
+			margin-bottom: 0.6em;
+
+			&.subhead {
+				font-weight: bold;
+			}
+		}
+	}
+
+	.form-inline input[type=checkbox],
+	.form-inline input[type=radio] {
+		vertical-align: top;
+	}
+
+	.header {
+		border-bottom: 1px solid #dadada;
+		padding-bottom: 0.7em;
+
+		h1 {
+			line-height: 2em;
+			font-weight: bold;
+		}
+	}
+
+	.main-content {
+		.clearfix();
+		margin: 10px 0;
+
+		&.no-margin-top {
+			margin-top: 0;
+		}
+	}
+
+	.grey {
+		color: #777;
+	}
+
+	.button {
+		margin-right: 12px;
+	}
+
+	.contact-module {
+		padding-left: 5.8em;
+
+		ul {
+			list-style: none;
+			margin-left: 0;
+			padding-left: 0;
+		}
+	}
+
+	.contact-module-light {
+		ul {
+			list-style: none;
+			margin-left: 0;
+		}
+	}
+
+	.secondary-text,
+	.secondary-text a {
+		.secondary-text();
+	}
+
+	.panel {
+		.border-radius(4px);
+		.box-shadow(0px 0px 3px 1px rgba(205, 205, 205, 0.5));
+		margin: 12px 0 0;
+		padding: 8px;
+		border: 1px solid rgb(205, 205, 205);
+		position: relative;
+
+		&:not(.nomark):before {
+			.rotate(45deg);
+			.box-shadow(-4px -4px 3px -3px rgba(205, 205, 205, 0.5));
+			content: "";
+			width: 14px;
+			height: 14px;
+			background: #fff;
+			position: absolute;
+			top: -0.5em;
+			border: 1px solid rgb(205, 205, 205);
+			border-bottom: 0;
+			border-right: 0;
+		}
+
+		.partial-refund-options {
+
+			li:last-child {
+				padding-top: 2px;
+				font-size: @font-size-base;
+				
+				.secondary-text {
+					margin-left: 0.6em;
+					vertical-align: bottom;
+				}
+			}
+
+			li > label {
+				padding: 7px 15px;
+			}
+
+			ul {
+				padding-left: 0;
+			}
+		}
+
+		.currency-inline {
+			position: relative;
+			margin-left: 10px;
+
+			label {
+				position: absolute;
+				width: 3em;
+				top: 0px;
+				left: 0px;
+				z-index: 3;
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+
+			input[type="text"] {
+				width: 10em;
+				position: absolute;
+				z-index: 2;
+				top: 0px;
+				left: 0px;
+				padding: 5px 2px 8px 45px;
+			}
+
+			@media screen and (-webkit-min-device-pixel-ratio:0) {
+				input[type="text"] {
+					padding: 6px 2px 7px 45px;
+				}				
+			}
+
+			input[type="text"].active {
+				border: 1px solid #0079C1;
+				box-shadow: 0 0 7px #0079C1;
+				text-decoration: none;
+			}
+
+			&.has-error{
+				.form-control-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
+
+				input, label {
+					border-color: @state-danger-text;
+				}
+			}
+		}
+	}
+
+	.has-error{
+		.form-control-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
+
+		input, label {
+			border-color: @state-danger-text;
+		}
+	}
+
+	#inrPanel:before {
+		left: 4.5em;
+	}
+
+	#snadPanel:before {
+		left: 17.5em;
+	}
+
+	#snadPanel.only:before {
+		left: 4.5em;
+	}
+
+	#snadPanel, #inrPanel{
+		fieldset.item-category {
+			legend{
+				font-weight:normal;
+			}
+		}
+		dl.item-link {
+			label{
+				font-weight:normal;
+			}
+		}
+	}
+	.popover {
+		font-size: @font-size-base - 1;
+		max-width: 300px;
+
+		.popover-title {
+			text-align: center;
+		}
+
+		.popover-title,
+		.popover-content * {
+			font-size: @font-size-base - 1;
+		}
+	}
+
+	ul.links {
+		list-style-type: none;
+		padding: 1em 0 0;
+
+		li {
+			list-style-image: none;
+			padding: 0.2em 0;
+
+			&.escalate {
+				padding-right: 170px;
+			}
+		}
+	}
+
+	.floatLeft {
+		float: left;
+	}
+
+	.floatRight {
+		float: right;
+	}
+
+
+	// Resolution Center Modules
+	@import "_modules/navs";
+	@import "_modules/alerts";
+	@import "_modules/trackingDetails";
+	@import "_modules/betaBanner";
+	@import "_modules/errors";
+	//@import "_modules/fileUpload";
+	//@import "_modules/orderStatusMeter";
+}

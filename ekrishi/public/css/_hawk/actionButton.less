@@ -1,0 +1,139 @@
+/* Size for buttons - Small(11px), Medium(13px), Large(16px) */
+
+.formSmall .button, .button.small, .formSmall button, button.small {
+	font-size: 0.8461em;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+.formMedium .button, .button.medium, .formMedium button, button.medium {
+	font-size: @font-size-base - 1px;
+	padding-bottom: 7px;
+	}
+.formLarge .button, .formLarge button {
+	font-size: @font-size-base + 2px;
+}
+/* Default Blue Color */
+a.button, .button, button {
+	color: #fff;
+	font-weight: bold;
+	line-height: 1.4545em;
+	text-shadow: 0 -1px #00692c;
+	text-align: center;
+	background-color: #0079c1;
+	background: -moz-linear-gradient(center bottom , #0079c1 0%, #0079c1 20%, #00a1ff 100%);/* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#0079c1), color-stop(20%,#0079c1), color-stop(100%,#00a1ff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(bottom , #0079c1 0%, #0079c1 20%, #00a1ff 100%);/* Chrome10+,Safari5.1+ */
+	background: -ms-linear-gradient(bottom , #0079c1 0%, #0079c1 20%, #00a1ff 100%);/* IE10+ */
+	background: -o-linear-gradient(bottom , #0079c1 0%, #0079c1 20%, #00a1ff 100%);/* Opera 11.10+ */
+	background: linear-gradient(bottom , #0079c1 0%, #0079c1 20%, #00a1ff 100%);/* W3C */
+	-moz-box-shadow: 0 1px #4dbeff inset;
+	-webkit-box-shadow: 0 1px #4dbeff inset;
+	box-shadow: 0 1px #4dbeff inset;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+	border-color: #0079c1 #00588B #004B77;
+	border-style: solid;
+	border-width: 1px;
+	height: 1.4545em;
+	padding: 7px 15px 8px;
+
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.button:hover, button:hover, button:focus, .button:focus {
+	text-shadow: 0 -1px #004c77;
+	background-color: #005282;
+	background: -moz-linear-gradient(center bottom , #005282 0%, #005282 20%, #0083cf 100%);/* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#0079c1), color-stop(20%,#0079c1), color-stop(100%,#00a1ff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(bottom , #005282 0%, #005282 20%, #0083cf 100%);/* Chrome10+,Safari5.1+ */
+	background: -ms-linear-gradient(bottom , #005282 0%, #005282 20%, #0083cf 100%);/* IE10+ */
+	background: -o-linear-gradient(bottom , #005282 0%, #005282 20%, #0083cf 100%);/* Opera 11.10+ */
+	background: linear-gradient(bottom , #005282 0%, #005282 20%, #0083cf 100%);/* W3C */
+	border-color: #00629B #004872 #003b5d;
+	-moz-box-shadow: 0 1px #1794DC inset;
+	-webkit-box-shadow: 0 1px #1794DC inset;
+	box-shadow: 0 1px #1794DC inset;
+}
+.button:active, button:active {
+	text-shadow: 0 -1px #004268;
+	background: -moz-linear-gradient(center, bottom , #005282 0%, #005282 20%, #006AA8 100%);/* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#0079c1), color-stop(20%,#0079c1), color-stop(100%,#00a1ff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(bottom , #005282 0%, #005282 20%, #006AA8 100%);/* Chrome10+,Safari5.1+ */
+	background: -ms-linear-gradient(bottom , #005282 0%, #005282 20%, #006AA8 100%);/* IE10+ */
+	background: -o-linear-gradient(bottom , #005282 0%, #005282 20%, #006AA8 100%);/* Opera 11.10+ */
+	background: linear-gradient(bottom , #005282 0%, #005282 20%, #006AA8 100%);/* W3C */
+	border-color: #004269 #003D60 #003A5C;
+	-moz-box-shadow: 0 2px 4px #004268 inset;
+	-webkit-box-shadow: 0 2px 4px #004268 inset;
+	box-shadow: 0 2px 4px #004268 inset;
+}
+/* Secondary Gray Color */
+.button.secondary {
+	color: #333;
+	text-shadow: 0 1px #e0e0e0;
+	background-color: #b3b7ba;
+	background: -moz-linear-gradient(bottom , #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);/* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#bfbfbf), color-stop(20%,#bfbfbf), color-stop(100%,#e0e0e0)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(bottom , #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);/* Chrome10+,Safari5.1+ */
+	background: -ms-linear-gradient(bottom , #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);/* IE10+ */
+	background: -o-linear-gradient(bottom , #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);/* Opera 11.10+ */
+	background: linear-gradient(bottom , #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);/* W3C */
+
+	-moz-box-shadow: 0 1px #ececec inset;
+	-webkit-box-shadow: 0 1px #ececec inset;
+	box-shadow: 0 1px #ececec inset;
+	border-color: #cbcbcb #b2b2b2 #8b8b8b;
+	}
+.button.secondary:hover, .button.secondary:focus {
+	background-color: #a5a5a5;
+	background: -moz-linear-gradient(center bottom , #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);/* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#a5a5a5), color-stop(20%,#a5a5a5), color-stop(100%,#e0e0e0)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(bottom , #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);/* Chrome10+,Safari5.1+ */
+	background: -ms-linear-gradient(bottom , #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);/* IE10+ */
+	background: -o-linear-gradient(bottom , #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);/* Opera 11.10+ */
+	background: linear-gradient(bottom , #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);/* W3C */
+	-moz-box-shadow: 0 1px #ebe9ec inset;
+	-webkit-box-shadow: 0 1px #ebe9ec inset;
+	box-shadow: 0 1px #ebe9ec inset;
+	border-color: #cbcbcb #b2b2b2 #8d8d8d;
+}
+.button.secondary:active {
+	background-color: #a5a5a5;
+	background: -moz-linear-gradient(center bottom , #a5a5a5 0%, #a5a5a5 20%, #ccc 100%);/* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#a5a5a5), color-stop(20%,#a5a5a5), color-stop(100%,#ccc)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(bottom , #a5a5a5 0%, #a5a5a5 20%, #ccc 100%);/* Chrome10+,Safari5.1+ */
+	background: -ms-linear-gradient(bottom , #a5a5a5 0%, #a5a5a5 20%, #ccc 100%);/* IE10+ */
+	background: -o-linear-gradient(bottom , #a5a5a5 0%, #a5a5a5 20%, #ccc 100%);/* Opera 11.10+ */
+	background: linear-gradient(bottom , #a5a5a5 0%, #a5a5a5 20%, #ccc 100%);/* W3C */
+	-moz-box-shadow: 0 2px 4px #737373 inset;
+	-webkit-box-shadow: 0 2px 4px #737373 inset;
+	box-shadow: 0 2px 4px #737373 inset;
+	border-color: #8c8c8c #878787 #808080;
+}
+
+/* Disabled Buttons */
+.button.disabled, .button.disabled:hover, .button.disabled:active {
+	color: #a6a6a6;
+	text-shadow: 0 1px #f4f4f4;
+	background-color: #e5e5e5;
+	background: -moz-linear-gradient(center bottom , #e5e5e5 0%, #e7e7e7 20%, #f7f7f7 100%);/* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#e5e5e5), color-stop(20%,#e7e7e7), color-stop(100%,#f7f7f7)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(bottom , #e5e5e5 0%, #e7e7e7 20%, #f7f7f7 100%);/* Chrome10+,Safari5.1+ */
+	background: -ms-linear-gradient(bottom , #e5e5e5 0%, #e7e7e7 20%, #f7f7f7 100%);/* IE10+ */
+	background: -o-linear-gradient(bottom , #e5e5e5 0%, #e7e7e7 20%, #f7f7f7 100%);/* Opera 11.10+ */
+	background: linear-gradient(bottom , #e5e5e5 0%, #e7e7e7 20%, #f7f7f7 100%);/* W3C */
+	-webkit-box-shadow: 0 1px #fafafa inset;
+	-moz-box-shadow: 0 1px #fafafa inset;
+	box-shadow: 0 1px #fafafa inset;
+	border-color: #cfcfcf;
+	cursor: auto;
+}
+/* for Links as Buttons */
+a.button {
+	display: inline-block;
+	padding-left: 18px;/* extra padding to compensate for default input element styles */
+	padding-right: 18px;
+	text-decoration:none;
+}

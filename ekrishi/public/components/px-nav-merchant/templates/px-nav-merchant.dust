@@ -1,0 +1,4 @@
+{>"components/px-nav-generic/templates/px-nav-generic"
+	px-nav-logo="components/px-nav-merchant/templates/px-nav-merchant-logo"
+	px-nav-links="components/px-nav-merchant/templates/px-nav-merchant-links"
+	px-nav-actions="components/px-nav-merchant/templates/px-nav-merchant-actions" /}

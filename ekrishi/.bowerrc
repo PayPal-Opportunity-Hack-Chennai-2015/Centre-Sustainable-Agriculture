@@ -1,0 +1,10 @@
+{
+	"directory": "public/components",
+	"json": "bower.json",
+	"registry": {
+		"search": [
+			"http://components.paypal.com/",
+			"https://bower.herokuapp.com"
+		]
+	}
+}

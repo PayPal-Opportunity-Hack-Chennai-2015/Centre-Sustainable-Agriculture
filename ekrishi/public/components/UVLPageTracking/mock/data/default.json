@@ -1,0 +1,12 @@
+{
+	"sys": {
+		"tracking": {
+			"fpti": {
+				"jsURL": "http://www.stage2dev545.qa.paypal.com",
+				"name": "pta",
+				"dataString": "tmpl=dustcorecomponentstestappspartaweb%2FWEB-INF%2Ftmpl%2Fdust%2Fcomponents%2FAddressEntry%2Ftemplates%2FaddressEntry.dust&calc=2a9cc4d677ddb&rsta=en_US&md5h=dfeb38d6e8217fd3b57519284f702071&shfp=%7C%7C&usce=+&pgtf=Sparta&s=ci&aver=unverified&rstr=unrestricted&pfid=2a9cc4d677ddb",
+				"serverURL": "https://tracking.qa.paypal.com:8443/webapps/tracking/ts"
+			}
+		}
+	}
+}

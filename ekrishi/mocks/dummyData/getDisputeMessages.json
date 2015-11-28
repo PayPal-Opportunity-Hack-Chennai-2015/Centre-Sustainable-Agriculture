@@ -1,0 +1,26 @@
+{
+	"cases": [{
+		"name": "default",
+		"response": {
+			"statusCode": 200,
+			"body": {
+				"_type": "ASF::Service::ResponseVO",
+				"service": "DisputeResolutionService",
+				"operation": "get_dispute_messages",
+				"requestedVersion": "1.0.0",
+				"actualVersion": "1.0.0",
+				"serverInfo": "disputeresolutionserv:get_dispute_messages&CalThreadId=155&TopLevelTxnStartTime=14c7448c05d&Host=stage2dev354.qa.paypal.com&pid=4568",
+				"result": {
+					"_type": "Risk::GetDisputeMessagesResponse",
+					"errorCode": 0,
+					"disputeMessages": [{
+						"_type": "Risk::DisputeMessageVO",
+						"message": "Created INR case.",
+						"timeCreated": "1427461172",
+						"association": 1
+					}]
+				}
+			}
+		}
+	}]
+}
