@@ -5,10 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="css/bootstrap-duallistbox.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="\css\bootstrap-duallistbox.min.css" rel="stylesheet" type="text/css" media="all">
+    <link rel='stylesheet' href='\css\timeline.css'/>
     <link rel='stylesheet' href='\css\bootstrap.min.css'/>
     <link rel='stylesheet' href='\css\form.css'/>
     <link rel='stylesheet' href='\css\jquery-ui.min.css'/>
+
+    <!-- Custom Fonts -->
+    <link href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 
 </head>
 <body>
@@ -50,14 +55,14 @@
    </div>
 
 
-    <div class="container beneficiary">
+    <div class="container beneficiary" id="main-container">
       <div class="panel panel-default beneficiary_panel" >
         <div class="panel-body">
 
     
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <form  class="form-horizontal" role="form">
+                <div  class="form-horizontal" role="form">
                     <div class="form-group required">
                         <label for="crop" class="control-label col-sm-4">What is the crop ?</label>
                         <div class="col-sm-8">
@@ -76,11 +81,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="stage" class="control-label col-sm-4">What is the stage of the crop ?</label>
+                        <label for="stage1" class="control-label col-sm-4">What is the stage of the crop ?</label>
                          <div class="col-sm-8">
-                        <select class="form-control" name="stage" id="stage" required autofocus>
-                                      <option value="">Select the soil</option>
-                              </select>
+                             <input type="text" class="form-control" name="stage1" id="stage1" required autofocus placeholder="select the stage of crop">
                             </div>
                     </div>
 
@@ -99,19 +102,334 @@
                     </div>
                    
                     <div class="form-group">
+                        <label for="stage1" class="control-label col-sm-4">Upload files</label>
+                         <div class="col-sm-8">
+                             <input type="file" id="choose" multiple="multiple" />
+                             <br>
+                            <div id="uploadPreview"></div>
+                            </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="input-enquiry">Describe the problem you are facing. </label>
+                        <div class="col-sm-8">
+                            <textarea name="enquiry" rows="5" id="input-enquiry" class="form-control"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <div class="col-sm-offset-6 col-xs-12 col-xs-offset-3">
                              <button class="btn btn-primary" id="submit" type="submit">Submit</button>
                         </div>
                     </div>
-                    
+                 </div>                   
 
-     <!-- Site footer -->
-     
-     <footer class="footer">
-        <div class="container"> 
-          <p> PayPal &copy; Powered By Marina</p>
+
+ <div id="timeline-wrapper" style="width:97%; margin:0 auto; margin-top:5px;display:none;">
+
+    <div class="panel panel-success" style="pading:"10px, 0px, 10px, 0px">
+            <div class="panel-heading">
+                Answer to consider
+            </div>
+          <div class="panel-body">
+            <p id="solutionText">Stopping use of chemical pesticides to encourage natural control agents like Trichogramma,Chrysopa, lady bird beetles etc.</p>
+            
+            <img id="solutionImage" src="data:image/png;base64,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">          
+
+            <iframe id="solutionVideo" width="420" height="315"
+                src="http://www.youtube.com/embed/jjit94YssqU?autoplay=false">
+            </iframe>
+          </div>
+    </div>
+    
+
+    <div class="panel panel-primary">
+      
+      <div class="panel-heading">Filter Questions</div>
+      <div class="panel-body">
+        <label style="padding-right:4px;">Questions with Answers : <input checked data-toggle="toggle" data-on="Show" data-off="Hide" data-onstyle="success" type="checkbox"> </label>
+        <label>Filter only my questions : &nbsp;<input checked data-toggle="toggle" data-on=" ON " data-off="Off " data-onstyle="success" type="checkbox"> </label>
+        <hr>
+        <label>Filter By Keywords : <input type="text"></label>
+
+        <hr>
+        <div style="align-items: center;">
+            <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#QnAModel">Apply Filter</button>
         </div>
-     </footer>
+      </div>
+
+     </div>
+
+        <!-- /.panel -->
+        <div class="panel panel-info">
+
+            <div class="panel-heading">
+                <i class="fa fa-clock-o fa-fw"></i> Questions Timeline
+            </div>
+
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <ul class="timeline">
+                   
+                    <li>
+                        <div class="timeline-badge"><i class="fa fa-check"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Pests on Rice paddy</h4>
+                                <p><small class="text-muted">
+                                    <i class="fa fa-clock-o"></i> 6 hours ago by <i class="userName">Rakesh Kumar</i></small>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Any idea hat this pest is and how to get rid of it? Also how much its gonna effect the crop?</p>
+                                <img src="/css/images/paddy_stemborer_1.png" style="height:80%; width: 80%">          
+
+                                <hr>
+                                <div>
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#QnAModel">
+                                        Answer
+                                        <span class="badge">5</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-success btn-sm btn-lspace" data-toggle="dropdown">
+                                        Up
+                                        <span class="badge">15</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger btn-sm btn-lspace" data-toggle="dropdown">
+                                        Down
+                                        <span class="badge">2</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge warning"><i class="fa fa-bomb"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Young larvae mine between the epidermal layers of the leaf. Grown up larva comes out</h4>
+                                <p><small class="text-muted">
+                                    <i class="fa fa-clock-o"></i> 6 hours ago by <i class="userName">Prakash</i></small>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>
+                                    Crop rotation is beneficial as it the insect survives only on groundnut.
+                                    Natural control through parasites encouraged by stopping pesticides.
+                                    Spraying 5% Neem seed kernel suspension to prevent adults from egg lying.
+                                    Pulling a thorny bush on plant would open up the galleries of the pests.
+                                    Setting up light traps to trap and kill adult insects
+                                </p>
+
+                                <hr>
+                                <div>
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#QnAModel">
+                                        Answer
+                                        <span class="badge">5</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-success btn-sm btn-lspace" data-toggle="dropdown">
+                                        Up
+                                        <span class="badge">15</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger btn-sm btn-lspace" data-toggle="dropdown">
+                                        Down
+                                        <span class="badge">2</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="timeline-badge danger"><i class="fa fa-bomb"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Severe defoliation in castor leaving veins.</h4>
+                                <p><small class="text-muted">
+                                    <i class="fa fa-clock-o"></i> 6 hours ago by <i class="userName">Arjun</i></small>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>
+                                    Deep summer ploughing and destruction of pupae.
+                                    Stopping of chemical pesticides to encourage natural control agents like Trichogramma,
+                                    Apanteles, Bracon, Chrysopa, lady bird beetles etc.
+                                    Spraying 5% Neem seed kernel suspension as repellent for adults from egg lying.
+                                    Spraying chilli-garlic suspension to kill young larvae.
+                                    Use of light traps to trap and kill adult insects.
+                                    Putting bird perches @10 per acre to attract birds for controlling larval stages.
+                                </p>
+                                
+                                <hr>
+                                <div>
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#QnAModel">
+                                        Answer
+                                        <span class="badge">5</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-success btn-sm btn-lspace" data-toggle="dropdown">
+                                        Up
+                                        <span class="badge">15</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger btn-sm btn-lspace" data-toggle="dropdown">
+                                        Down
+                                        <span class="badge">2</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge danger"><i class="fa fa-bomb"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Drooping dried shoot as larva feeds near shoot tips. Later larvae bore in to fruits fecal</h4>
+                                <p><small class="text-muted">
+                                    <i class="fa fa-clock-o"></i> 6 hours ago by <i class="userName">Karthir</i></small>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>
+                                    Crop rotation is beneficial as the insect survives only on brinjal.
+                                    Collection, Destruction of dried shoot tips and bored fruits.
+                                    Using pheromone traps @ 50 per acre to capture adult male moths to control the pest besides monitoring the pest
+                                    Spraying 5% Neem seed kernel suspension as repellent for egg laying adults.
+                                </p>
+                                
+                                <hr>
+                                <div>
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#QnAModel">
+                                        Answer
+                                        <span class="badge">5</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-success btn-sm btn-lspace" data-toggle="dropdown">
+                                        Up
+                                        <span class="badge">15</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger btn-sm btn-lspace" data-toggle="dropdown">
+                                        Down
+                                        <span class="badge">2</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="timeline-badge success"><i class="fa fa-check"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Pests on Rice paddy</h4>
+                                <p><small class="text-muted">
+                                    <i class="fa fa-clock-o"></i> 6 hours ago by <i class="userName">Ankush</i></small>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>
+                                    Crop rotation is beneficial as it the insect survives only on groundnut.
+                                    Natural control through parasites encouraged by stopping pesticides.
+                                    Spraying 5% Neem seed kernel suspension to prevent adults from egg lying.
+                                    Pulling a thorny bush on plant would open up the galleries of the pests.
+                                    Setting up light traps to trap and kill adult insects
+                                </p>
+
+                                <hr>
+
+                                <div>
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#QnAModel">
+                                        Answer
+                                        <span class="badge">5</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-success btn-sm btn-lspace" data-toggle="dropdown">
+                                        Up
+                                        <span class="badge">15</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger btn-sm btn-lspace" data-toggle="dropdown">
+                                        Down
+                                        <span class="badge">2</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.panel-body -->
+        </div>                    
+        <!-- /.panel -->
+        
+    </div>
+    <!-- /#wrapper -->
+
+
+    <!-- Modal -->
+    <div id="QnAModel" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Pests on Rice paddy</h4>
+          </div>
+          <div class="modal-body">
+              <p>Any idea hat this pest is and how to get rid of it? Also how much its gonna effect the crop?</p>
+              <div>
+                <img src="/css/images/paddy_stemborer_1.png">          
+              </div>
+
+              <hr>
+
+              <!-- Type and Submit your answer section -->
+              <div style="background: #eee none repeat scroll 0 0; padding: 8px 4px 8px 4px">
+                  <h4 class="modal-title">Answer</h4>
+                  <div>
+                    <textarea id="form-about-yourself" class="form-about-yourself form-control" placeholder="Answer here..." name=""></textarea>
+                    
+                    <hr>
+                    <div>
+                        <button type="button" class="btn btn-info" data-toggle="dropdown">
+                            Upload a file
+                            <span class="glyphicon glyphicon-upload"></span>
+                        </button>
+
+                        <button type="button" class="btn btn-primary" data-toggle="dropdown">
+                                Submit
+                        </button>
+                    </div>
+                    </div>
+              </div>
+
+                <!--List of existing answers section-->
+                 <hr>   
+                 <h4 class="modal-title">Other Answer(s)</h4>
+
+                 <p>Any idea hat this pest is and how to get rid of it. Also how much its gonna effect the crop. Any idea hat this pest is and how to get rid of it. Also how much its gonna effect the crop. Any idea hat this pest is and how to get rid of it. Also how much its gonna effect the crop.</p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
 
     </body>
@@ -119,14 +437,46 @@
     <script src="\js\jquery-ui.js"></script> 
     <script src="\js\bootstrap.min.js"></script>
     <script src="\js\jquery.bootstrap-duallistbox.min.js"></script>
+    <script src="\js\jquery.bootstrap-toggle.min.js"></script>
 
     <script type="text/javascript">
     
      $(document).ready(function(){
+var uploadedImages = [];      function readImage(file) {
+ 
+   var reader = new FileReader();
+   var image  = new Image();
+ 
+   reader.readAsDataURL(file);  
+   reader.onload = function(_file) {
+       image.src    = _file.target.result;              // url.createObjectURL(file);
+       uploadedImages.push(_file.target.result);
+       console.log(_file.target.result);
+       image.onload = function() {
+           var w = "80px",
+               h = "70px",
+               t = file.type,                           // ext only: // file.type.split('/')[1],
+               n = file.name,
+               s = ~~(file.size/1024) +'KB';
+           $('#uploadPreview').append('<img src="'+ this.src +'" style=\"width:80px;height:70px;\">' + ' '+s+' '+n+'<br>');
+       };
+       image.onerror= function() {
+           alert('Invalid file type: '+ file.type);
+       };      
+   };
+   
+}
+$("#choose").change(function (e) {
+   if(this.disabled) return alert('File upload not supported!');
+   var F = this.files;
+   if(F && F[0]) for(var i=0; i<F.length; i++) readImage( F[i] );
+});
 
         var availableCropTags = ["wheat", "paddy", "cotton"];
 
         var availableSoilTags = ["Black", "Red"];
+
+         var availableStageTags = ["Sowing","Ploughing","Blooming","Harvest"];
 
         function split( val ) {
           return val.split( /,\s*/ );
@@ -134,7 +484,30 @@
         function extractLast( term ) {
           return split( term ).pop();
         }
-                        
+         $("#stage1").bind( "keydown", function( event )
+         {
+             if ( event.keyCode === $.ui.keyCode.TAB && $( this ).autocomplete( "instance" ).menu.active ) {
+                 event.preventDefault();
+             }
+         })
+                 .autocomplete({
+                     minLength: 0,
+                     source: function( request, response ) {
+                         response( $.ui.autocomplete.filter(
+                                 availableStageTags, extractLast( request.term ) ) );
+                     },
+                     focus: function() {
+                         return false;
+                     }
+                     /*select: function( event, ui ) {
+                      var terms = split( this.value );
+                      terms.pop();
+                      terms.push( ui.item.value );
+                      terms.push( "" );
+                      this.value = terms.join( ", " );
+                      return false;
+                      }  */
+                 });
         $("#crop").bind( "keydown", function( event ) 
         {
           if ( event.keyCode === $.ui.keyCode.TAB && $( this ).autocomplete( "instance" ).menu.active ) {
@@ -221,7 +594,7 @@
         $('#imagelist').on('click','img',function(){
           $('.selected').removeClass('selected');
            $(this).addClass('selected');
-           imgSource = this.src;
+           imgSource = this.id;
         });
 
 
@@ -232,40 +605,37 @@
 
 
            //For submitting data
-           $('#submit').on('click',function(e){
-            //var formdata=new Object();
-            var crop = $('#crop').val();
-            var soil = $('#soil').val();
-            var stage = $('#stage').val();
-            var pestImage = "";
-            if (imgSource != ""){
-              pestImage = imgSource;
-            }
-            
+         $('#submit').on('click',function(e){
 
-            formdata = {
-              crop:crop,
-              soil:soil,
-              stage:stage,
-              pestImage:pestImage
-            };
+            $("#timeline-wrapper").css("display","block");
 
-              $.ajax({
-                url:"../add",
-                type:"POST",
-                data:formdata,
-                dataType:"json",
-                success:function(){
-                  //show solutions
+
+             //var formdata=new Object();
+             var crop = $('#crop').val();
+             var soil = $('#soil').val();
+             var stage = $('#stage').val();
+             var pestImage = "";
+             if (imgSource != ""){
+                 pestImage = imgSource;
+             }
+              
+             $.ajax({
+                 url:"../submit?crop="+crop+"&soil="+soil+"&stage="+stage+"&pestImage="+pestImage,
+                 type:"GET",
+                 success:function(res){
+                  console.log("Response"+res);
+                     //show solutions
                  },
-                error:function(){
-                
-                }
-            });
-                               
-                      
-                });
-});
+                 error:function(){
+                      console.error("Error submitting question");
+                 }
+
+             });
+
+
+         });
+      });
+
     </script>
 
 
