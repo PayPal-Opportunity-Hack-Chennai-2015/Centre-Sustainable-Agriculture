@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CSA</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel='stylesheet' href='\css\bootstrap.min.css'/>
+
+    <!-- Bootstrap Plugins CSS -->
+    <link rel='stylesheet' href='\css\bootstrap-toggle.min.css'/>
+
+    <!-- Timeline CSS -->
+    <link rel='stylesheet' href='\css\timeline.css'/>
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="\css\font-awesome\css\font-awesome.min.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        .userName{
+            color: #673ab7;
+        }
+        .btn-lspace{
+            margin-left: 5px !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="wrapper" style="width:94%; margin:0 auto; margin-top:5px;">
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">Filter Questions</div>
+      <div class="panel-body">
+        <label style="padding-right:4px;">Questions with Answers : <input checked data-toggle="toggle" data-on="Show" data-off="Hide" data-onstyle="success" type="checkbox"> </label>
+        <label>Filter only my questions : &nbsp;<input checked data-toggle="toggle" data-on=" ON " data-off="Off " data-onstyle="success" type="checkbox"> </label>
+        <hr>
+        <label>Filter By Keywords : <input type="text"></label>
+
+        <hr>
+        <div style="align-items: center;">
+            <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#QnAModel">Apply Filter</button>
+        </div>
+      </div>
+    </div>
+
+        <!-- /.panel -->
+        <div class="panel panel-success">
+
+            <div class="panel-heading">
+                <i class="fa fa-clock-o fa-fw"></i> Questions Timeline
+            </div>
+
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <ul class="timeline">
+                   
+                    <li>
+                        <div class="timeline-badge"><i class="fa fa-check"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Pests on Rice paddy</h4>
+                                <p><small class="text-muted">
+                                    <i class="fa fa-clock-o"></i> 6 hours ago by <i class="userName">Rakesh Kumar</i></small>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Any idea hat this pest is and how to get rid of it? Also how much its gonna effect the crop?</p>
+                                <img src="paddy_stemborer_1.png" style="height:80%; width: 80%">          
+
+                                <hr>
+                                <div>
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#QnAModel">
+                                        Answer
+                                        <span class="badge">5</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-success btn-sm btn-lspace" data-toggle="dropdown">
+                                        Up
+                                        <span class="badge">15</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger btn-sm btn-lspace" data-toggle="dropdown">
+                                        Down
+                                        <span class="badge">2</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge warning"><i class="fa fa-bomb"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Pests on Rice paddy</h4>
+                                <p><small class="text-muted">
+                                    <i class="fa fa-clock-o"></i> 6 hours ago by <i class="userName">Rakesh Kumar</i></small>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Any idea hat this pest is and how to get rid of it? Also how much its gonna effect the crop?</p>
+                                <p>Any idea hat this pest is and how to get rid of it? Also how much its gonna effect the crop?</p>
+
+                                <hr>
+                                <div>
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#QnAModel">
+                                        Answer
+                                        <span class="badge">5</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-success btn-sm btn-lspace" data-toggle="dropdown">
+                                        Up
+                                        <span class="badge">15</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger btn-sm btn-lspace" data-toggle="dropdown">
+                                        Down
+                                        <span class="badge">2</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="timeline-badge danger"><i class="fa fa-bomb"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Pests on Rice paddy</h4>
+                                <p><small class="text-muted">
+                                    <i class="fa fa-clock-o"></i> 6 hours ago by <i class="userName">Rakesh Kumar</i></small>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Any idea hat this pest is and how to get rid of it? Also how much its gonna effect the crop?</p>
+                                <p>Any idea hat this pest is and how to get rid of it? Also how much its gonna effect the crop?</p>
+                                
+                                <hr>
+                                <div>
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#QnAModel">
+                                        Answer
+                                        <span class="badge">5</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-success btn-sm btn-lspace" data-toggle="dropdown">
+                                        Up
+                                        <span class="badge">15</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger btn-sm btn-lspace" data-toggle="dropdown">
+                                        Down
+                                        <span class="badge">2</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge danger"><i class="fa fa-bomb"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Pests on Rice paddy</h4>
+                                <p><small class="text-muted">
+                                    <i class="fa fa-clock-o"></i> 6 hours ago by <i class="userName">Rakesh Kumar</i></small>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Any idea hat this pest is and how to get rid of it? Also how much its gonna effect the crop?</p>
+                                <p>Any idea hat this pest is and how to get rid of it? Also how much its gonna effect the crop?</p>
+                                
+                                <hr>
+                                <div>
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#QnAModel">
+                                        Answer
+                                        <span class="badge">5</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-success btn-sm btn-lspace" data-toggle="dropdown">
+                                        Up
+                                        <span class="badge">15</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger btn-sm btn-lspace" data-toggle="dropdown">
+                                        Down
+                                        <span class="badge">2</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="timeline-badge success"><i class="fa fa-check"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Pests on Rice paddy</h4>
+                                <p><small class="text-muted">
+                                    <i class="fa fa-clock-o"></i> 6 hours ago by <i class="userName">Rakesh Kumar</i></small>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Any idea hat this pest is and how to get rid of it? Also how much its gonna effect the crop?</p>
+                                <p>Any idea hat this pest is and how to get rid of it? Also how much its gonna effect the crop?</p>
+                                
+                                <hr>
+                                <div>
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#QnAModel">
+                                        Answer
+                                        <span class="badge">5</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-success btn-sm btn-lspace" data-toggle="dropdown">
+                                        Up
+                                        <span class="badge">15</span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger btn-sm btn-lspace" data-toggle="dropdown">
+                                        Down
+                                        <span class="badge">2</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.panel-body -->
+        </div>                    
+        <!-- /.panel -->
+        
+    </div>
+    <!-- /#wrapper -->
+
+
+    <!-- Modal -->
+    <div id="QnAModel" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Pests on Rice paddy</h4>
+          </div>
+          <div class="modal-body">
+              <p>Any idea hat this pest is and how to get rid of it? Also how much its gonna effect the crop?</p>
+              <div>
+                <img src="paddy_stemborer_1.png">          
+              </div>
+
+              <hr>
+
+              <!-- Type and Submit your answer section -->
+              <div style="background: #eee none repeat scroll 0 0; padding: 8px 4px 8px 4px">
+                  <h4 class="modal-title">Answer</h4>
+                  <div>
+                    <textarea id="form-about-yourself" class="form-about-yourself form-control" placeholder="Answer here..." name=""></textarea>
+                    
+                    <hr>
+                    <div>
+                        <button type="button" class="btn btn-info" data-toggle="dropdown">
+                            Upload a file
+                            <span class="glyphicon glyphicon-upload"></span>
+                        </button>
+
+                        <button type="button" class="btn btn-primary" data-toggle="dropdown">
+                                Submit
+                        </button>
+                    </div>
+                    </div>
+              </div>
+
+                <!--List of existing answers section-->
+                 <hr>   
+                 <h4 class="modal-title">Other Answer(s)</h4>
+
+                 <p>Any idea hat this pest is and how to get rid of it. Also how much its gonna effect the crop. Any idea hat this pest is and how to get rid of it. Also how much its gonna effect the crop. Any idea hat this pest is and how to get rid of it. Also how much its gonna effect the crop.</p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="\js\bootstrap.min.js"></script>
+    <script src="\js\bootstrap-toggle.min.js"></script>
+
+</body>
+
+</html>

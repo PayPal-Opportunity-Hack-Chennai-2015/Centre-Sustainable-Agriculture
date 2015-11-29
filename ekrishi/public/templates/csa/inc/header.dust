@@ -1,0 +1,20 @@
+<div class="hd">
+    {?prevWidgetText}
+        <div class="prev-widget">
+            <span class="icon icon-medium icon-arrow-left"></span>
+            <a href="javascript:void(0)" data-widget-prev="{?prevWidgetId}{prevWidgetId}{/prevWidgetId}">
+                {prevWidgetText}
+            </a>
+        </div>
+    {/prevWidgetText}
+    <div class="close">
+        <a href="javascript:void(0)"
+            {?closeCallMethod}data-call="{closeCallMethod}"{/closeCallMethod}
+            {^preventDefault}
+                data-overlay-close=""
+            {/preventDefault}
+            class="icon icon-medium icon-close">
+                &nbsp;
+        </a>
+    </div>
+</div>

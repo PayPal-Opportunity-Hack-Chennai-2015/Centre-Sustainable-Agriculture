@@ -1,0 +1,14 @@
+{
+  "name": "UVLPageTracking",
+  "version": "1.0.3",
+  "_release": "1.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.3",
+    "commit": "aac470de372b3e808009080a4f2bf9472b847202"
+  },
+  "_source": "git://github.paypal.com/CoreComponents/UVLPageTracking",
+  "_target": "~1.0.3",
+  "_originalSource": "UVLPageTracking",
+  "_direct": true
+}

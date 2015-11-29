@@ -1,0 +1,782 @@
+body {
+	#gradient.vertical-three-colors(#ececec, #fcfcfc, 40%, #f0f0f0);
+	background-color: #6E6D71;
+}
+
+#content {
+    &:before{
+      height: 94px;
+      display: block;
+
+		@media print {
+			height: 0;
+		}
+    }
+	.layout {
+	    position: relative;
+	    margin-top: -83px;
+	}
+}
+.section{
+	background-color: @white;
+	.borderRadius();
+	.dropShadow(0, 1px, 4px, 0, 0.25);
+	margin-bottom: 20px;
+	min-height: 365px;
+	padding: 7px 15px 15px;
+
+	@media print {
+		box-shadow: none;
+	}
+
+	.sectionHeader {
+		border-bottom: 1px solid @grayLighter;
+		line-height:40px;
+
+		h1 {
+			line-height: 2em;
+			font-weight: bold;
+		}
+		h3 {
+			border-bottom: 1px solid @grayLighter;
+			/*color: #555;*/
+			font-size: @baseFontSize + 4;
+			margin-top: 0;
+			margin-bottom: 0;
+			line-height: 18px;
+			padding: 0 0 12px;
+			text-align: left;
+			width: 100%;
+		}
+	}
+	.sectionHeaderMore {
+		.uiSprite;
+		background-position: right -1284px;
+		color: @palBlue;
+		float: right;
+    	font-size: @baseFontSize - 2px;
+    	padding: 2px 18px 0 0;
+	}
+	.sectionHeaderMore:hover{
+		text-decoration: underline;
+	}
+	.sectionContent {
+		.clearfix();
+		margin: 10px 0;
+
+		&.no-margin-top {
+			margin-top: 0;
+		}
+	}
+}
+
+
+/* Welcome banner */
+.betaBannerMainWrapper {
+	background-color: #ededed;
+	border-bottom: 1px solid #ddd;
+	margin-top: 74px;
+
+	.bannerWrapper {
+		padding: 24px 0;
+	}
+
+ 	.betaBanner {
+		background-color: #f5f5f5;
+		background-image: linear-gradient(#e9e9e9, #f5f5f5);
+		background-repeat: no-repeat;
+		border: 2px solid @white;
+		border-radius: 3px;
+		min-height: 48px;
+		overflow: auto;
+		margin-bottom: 0;
+		position: relative;
+		text-align: center;
+
+		.bannerImg {
+			background: transparent url(https://www.paypalobjects.com/webstatic/i/ex_me2/scr/ribbonBlue.png) no-repeat 0 0;
+			content: '';
+			left: -20px;
+			_height: 50px;
+			min-height: 62px;
+			position: absolute;
+			top: -15px;
+			width: 105px;
+		}
+
+		.betaText {
+			color: @white;
+			font-weight: bold;
+			-webkit-transform: rotate(330deg);
+			-moz-transform: rotate(330deg);
+			-o-transform: rotate(330deg);
+			-ms-transform: rotate(330deg);
+			left: 12px;
+			position: absolute;
+			top: 8px;
+		}
+		h2 {
+			color: @gray;
+			font-weight: normal;
+			float:left;
+			line-height: 20px;
+			margin: 10px 0 0;
+			padding-top: 7px;
+			text-align: left;
+			width: 70%;
+		}
+		.headnigSpace {
+			margin-left: 50px;
+
+			a {
+				font-size: @baseFontSize + 1px;
+			}
+		}
+		.welcomeFeedback {
+			.headerFooterSprite;
+			background-position: 1px -1177px;
+			float: right;
+			padding-top: 18px;
+
+			a {
+				font-weight: bold;
+				margin-left: 20px;
+			}
+		}
+	}
+}
+.bannerBttnWrapper {
+    a {
+      display: block;
+      float: right;
+      margin: -1px 5px 0 0;
+      background-color: #ededed;
+      border: 1px solid #ddd;
+      border-top: none;
+      height: 30px;
+      line-height: 30px;
+      color: #555;
+      font-size: @baseFontSize - 2px;
+      font-weight: bold;
+      text-decoration:none;
+      .border-radius(0 0 5px 5px);
+      padding: 0 21px 0 12px;
+    }
+    .showText {
+        display: none;
+        padding-left: 1px;
+    }
+    .hideText {
+        padding-left: 0px;
+    }
+    .arrowIcon {
+      position: relative;
+      top: -1px;
+      left: 0;
+      margin:0;
+      padding: 1px 0 0 0;
+      color: @grayLight;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 16px;
+      text-align: center;
+      vertical-align: middle;
+      font-size: @baseFontSize + 4px;
+      &.hideArrow {
+        margin-right: 0px;
+        .rotate(271deg);
+      }
+      &.showArrow {
+        margin-right: -5px;
+        .rotate(90deg);
+      }
+    }
+}
+
+#toolsModule .sectionHeader, #custModule .sectionHeader, #ActivityTile .sectionHeader, #moneyModule .sectionHeader {
+	h2{
+		display: inline;
+		color: #555;
+	}
+	a:hover {
+		text-decoration: none;
+	}
+}
+
+/* Tools tile */
+#toolsModule {
+	min-height: 145px;
+	padding-bottom: 0;
+}
+.toolsTile {
+	float: left;
+	list-style-type: none;
+	margin: 0 0;
+	width: 100%;
+
+	li {
+	    float: left;
+	    list-style: none outside none;
+	    margin: 0 auto;
+	    min-width: 89px;
+	    width: 33%;
+	    padding: 0;
+	    text-align: center;
+	}
+	li a {
+		.productSpriteNoBg;
+		color: @grayDarker;
+		display: block;
+		line-height: 15px;
+    	padding: 52px 6px 15px;
+    	word-wrap: break-word;
+	}
+	li.invoicing a {
+		background-position: 32px -185px;
+	}
+	li.requestMoney a {
+		background-position: 28px -389px;
+	}
+	li.sendMoney a {
+		background-position: 28px -591px;
+		padding-bottom: 30px;
+	}
+	li.developer a {
+		background-position: 28px -786px;
+		padding-bottom: 35px;
+	}
+	li.myBusinessSetup a {
+		background-position: 28px -986px;
+	}
+	li.welcome a {
+    background-position: 28px -1185px;
+  }
+
+}
+
+.activityTile{
+	min-height: 590px;
+	.table td{
+		border-top: none;
+		border-bottom: 1px solid @table-border-color;
+
+		&.actions{display: none;}
+	}
+}
+
+/* Home page heading styles */
+#custModule, #toolsModule, #moneyModule {
+	min-height: 162px;
+	padding-bottom: 10px;
+
+	.sectionContent {
+		margin-bottom: 15px;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+#custModule h2, #toolsModule h2, #moneyModule h2, #ActivityTile h2 {
+	margin: -3px 5px 0 0;
+}
+
+/* Customer module */
+#custModule {
+	.custContent {
+		color: @gray;
+		font-size: @baseFontSize - 2px;
+		text-align: center;
+		padding: 20px 0px;
+	}
+	.custCount{
+		font-size: @baseFontSize + 7px;
+		font-weight: bold;
+		color: @grayDarker;
+	}
+	.custLastYearText{
+		display: block;
+		line-height: 18px;
+	}
+	.custCountryNames{
+		display: block;
+		line-height: 22px;
+	}
+}
+
+/* Customer module ends */
+
+.subNavigation{
+ 	margin: 35px 0 10px 0;
+ 	line-height: 30px;
+ 	text-align: center;
+
+ 	.horizontalList {
+ 		text-align: center !important;
+ 	}
+ }
+
+
+.up {
+    border-color: -moz-use-text-color transparent @black;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-style: none solid solid;
+    border-width: medium 4px 4px;
+}
+
+
+/* clean up the below code once design is finalized */
+
+
+
+.subHeading{background-color: @grayLighter; line-height:40px; .space-bottom}
+
+#ActivityTile .txns-empty {
+	padding-top: 200px;
+	text-align: center;
+}
+
+/* delete this if we are not using it */
+#page .no-records p{
+	cursor: default;
+    margin: 50px 0;
+    text-align: center;
+    font-size: @baseFontSize;
+	color: @grayDarker;
+}
+
+#page #custom-dates-view-button{
+	color: @grayDarker;
+	font-size: @baseFontSize - 3px;
+	font-weight: bold;
+	padding: 5px 8px;
+	background: none;
+	#gradient > .vertical-three-colors(#e0e0e0, #e0e0e0, 20%, #bfbfbf);
+	box-shadow: 0 1px #ECECEC inset, 0 1px rgba(255, 255, 255, 0.2);
+	border-color: #cbcbcb #b2b2b2 #8b8b8b;
+	border-style: solid;
+	border-width: 1px;
+	.textShadow(0 1px #E0E0E0);
+	display: inline-block;
+	.borderRadius(4px);
+
+
+	&:hover, &:focus{
+		border-color:#cbcbcb #b2b2b2 #8d8d8d;
+		#gradient > .vertical-three-colors(#e0e0e0, #e0e0e0, 20%, #a5a5a5);
+		box-shadow: 0 1px #ebe9ec inset, 0 1px rgba(255, 255, 255, 0.2);
+	}
+
+	&:active{
+		border-color:#8c8c8c #878787 #808080;
+		#gradient > .vertical-three-colors(#cccccc, #cccccc, 20%, #a5a5a5);
+		box-shadow: 0 2px 4px #737373 inset, 0 1px rgba(255, 255, 255, 0.2);
+	}
+
+}
+#page #custom-dates-view-button{
+	padding: 3px 15px;
+}
+
+/* Money Tile */
+.error-msg{
+	.align-center;
+	line-height: 26px;
+	min-height: 126px;
+}
+
+.bottomLinks {
+	text-align: center;
+	padding: 10px 0 0;
+	border-top: 1px solid @grayLighter;
+
+	li {
+		margin-bottom: 15px;
+	}
+}
+
+.moneyTile{
+	.sectionContent{
+		a:link, a:hover, a:visited, a:focus {
+	  		color: inherit;
+		}
+	}
+	.row-four{
+		margin-top: 0;
+		margin-bottom: 0;
+		min-height: 92px;
+
+		a:hover {
+			text-decoration: none;
+		}
+		.money-row{
+			margin-top:15px;
+
+			sup{
+				margin-right: 5px;
+				margin-left: 1px;
+			}
+			.balanceAvailable{
+				min-width: 65%;
+				text-align: left;
+				float:left;
+				sup{
+					margin-right: 5px;
+					margin-left: -5px;
+				}
+			}
+			.onlyBalanceAvailable{
+				min-width: 65%;
+				text-align: left;
+			}
+			.withheldAvailable{
+				min-width: 35%;
+				float:left;
+			}
+			.availableCurrencySymbol{
+				position: absolute;
+				margin-top:-4px;
+				font-weight: bold;
+				font-size: @baseFontSize - 2px;
+				font-family: @fontFamily;
+			}
+			.onlyAvailableCurrencySymbol{
+				position: absolute;
+				margin-top:-4px;
+				font-weight: bold;
+				font-size: @baseFontSize + 2px;
+				font-family: @fontFamily;
+			}
+			.withheldCurrencySymbol{
+				position: absolute;
+				margin-top:-4px;
+				font-size: @baseFontSize - 2px;
+			}
+			.availableCurrencyValue{
+				margin-left: 8px;
+				font-weight: bold;
+				font-size: @baseFontSize + 7px;
+			}
+			.onlyAvailableCurrencyValue{
+				margin-left:8px;
+				font-weight: bold;
+				font-size: @baseFontSize + 22px;
+			}
+			.withheldCurrencyValue{
+				margin-left:8px;
+				font-size: @baseFontSize + 7px;
+			}
+			.negativeBalanceSign{
+				color: #B32317;
+			}
+			.negativeBalance{
+				color: #B32317;
+				margin-left: 13px;
+			}
+			.zeroBalance{
+				color: @gray;
+			}
+			a{
+				display: inline-block;
+				margin:9px 0px 5px;
+				&.amount{
+					color: #52862F;
+				}
+				&.onlyAmount{
+					color: #52862F;
+					margin:15px 0px 0px;
+				}
+			}
+			.amountAvaliable{
+				margin-top:9px;
+			}
+			.availableLabel{
+				font-weight: bold;
+				font-size: @baseFontSize;
+			}
+			.withheldLabel{
+				font-size: @baseFontSize;
+				padding-right:5px;
+			}
+			.empty-balance{
+				color: @gray;
+			}
+
+			.value{
+				padding-right: 15px;
+				min-height: 26px;
+				font-size: @baseFontSize + 4px;
+			}
+			.value-multi{
+				padding-right:0;
+			}
+
+			.label-text{
+				min-height: 26px;
+			}
+
+		}
+		.multipleCurrency{
+			background-color: #F2F8FC;
+			.borderRadius();
+			margin:8px 0;
+			.multipleCurrencyArrow {
+					width: 0px;
+					height: 0px;
+					border-style: solid;
+					border-width: 0 12px 12px 12px;
+					border-color: transparent transparent #F2F8FC;
+					margin:-10px 0px 0px 40px;
+			}
+			.multipleCurrencyRow{
+				padding:15px 8px;
+				.multicurrencyCode{
+					font-size: @baseFontSize + 1px;
+					color: @black;
+				}
+				.multicountryFlag{ //TODO: Move this to common code
+					margin-right: 5px;
+					background: url("https://www.paypalobjects.com/webstatic/i/ex_me2/sprite/sprite_currencies_1x.png") no-repeat scroll transparent;
+					padding-left:21px;
+				}
+				.multicountryFlag_ARS{
+					background-position: 0px 0px;
+				}
+				.multicountryFlag_AUD{
+					background-position: 0px -200px;
+				}
+				.multicountryFlag_BRL{
+					background-position: 0px -400px;
+				}
+				.multicountryFlag_CAD{
+					background-position: 0px -600px;
+				}
+				.multicountryFlag_CHF{
+					background-position: 0px -800px;
+				}
+				.multicountryFlag_CZK{
+					background-position: 0px -1000px;
+				}
+				.multicountryFlag_DKK{
+					background-position: 0px -1200px;
+				}
+				.multicountryFlag_EUR{
+					background-position: 0px -1400px;
+				}
+				.multicountryFlag_GBP{
+					background-position: 0px -1600px;
+				}
+				.multicountryFlag_HKD{
+					background-position: 0px -1800px;
+				}
+				.multicountryFlag_HUF{
+					background-position: 0px -2000px;
+				}
+				.multicountryFlag_JPY{
+					background-position: 0px -2200px;
+				}
+				.multicountryFlag_MXN{
+					background-position: 0px -2400px;
+				}
+				.multicountryFlag_MYR{
+					background-position: 0px -2600px;
+				}
+				.multicountryFlag_NOK{
+					background-position: 0px -2800px;
+				}
+				.multicountryFlag_NZD{
+					background-position: 0px -3000px;
+				}
+				.multicountryFlag_PHP{
+					background-position: 0px -3200px;
+				}
+				.multicountryFlag_PLN{
+					background-position: 0px -3400px;
+				}
+				.multicountryFlag_RUB{
+					background-position: 0px -3600px;
+				}
+				.multicountryFlag_SEK{
+					background-position: 0px -3800px;
+				}
+				.multicountryFlag_SGD{
+					background-position: 0px -4000px;
+				}
+				.multicountryFlag_THB{
+					background-position: 0px -4200px;
+				}
+				.multicountryFlag_TRY{
+					background-position: 0px -4400px;
+				}
+				.multicountryFlag_TWD{
+					background-position: 0px -4600px;
+				}
+				.multicountryFlag_USD{
+					background-position: 0px -4800px;
+				}
+				.multicountryFlag_ZAR{
+					background-position: 0px -5000px;
+				}
+				.multiAmount{
+					float: right;
+					font-size: @baseFontSize;
+					font-family: @fontFamily;
+				}
+				.multipleCurrencyLink{
+					font-size: @baseFontSize - 3px;
+					margin-top:16px;
+					color: @palBlue;
+					display:block;
+				}
+				.multipleCurrencyLink:hover{
+					text-decoration: underline;
+				}
+			}
+
+		}
+		.multiExchangeNote{
+			font-size: @baseFontSize - 3px;
+			color: @gray;
+			line-height: 14px;
+			margin:10px 0;
+		}
+		.multiCredit{
+			margin: 0;
+    		padding: 15px 0 10px;
+			list-style: none;
+			.multiCreditRow{
+				margin-top: 2px;
+				overflow: hidden;
+				.multiCreditLabel{
+					font-size: @baseFontSize + 1px;
+					color: @black;
+					width:65%;
+					float:left;
+				}
+				.multiCreditAmount{
+					float: right;
+					width:35%;
+					font-size: @baseFontSize;
+					font-family: @fontFamily;
+					text-align: right;
+				}
+			}
+		}
+	}
+
+}
+
+
+/* styles for mobile */
+html[data-device-type="mobile"] {
+
+	.actTile {
+		margin-left: 0 !important;
+	}
+
+	.section {
+		border-bottom: 1px solid @grayLighter;
+		border-top: 1px solid @grayLighter;
+		border-radius: 0;
+		box-shadow: none;
+		margin-bottom: 5px;
+	}
+
+	.activityTile, #ActivityTile {
+		min-height: 150px;
+	}
+
+	/*#content {
+		padding: 0;
+		margin: 84px auto auto;
+	}*/
+
+	.section {
+		border: none;
+	}
+
+	.subNavigation .horizontalList, .bottomLinks {
+		text-align: left !important;
+	}
+
+	@media (min-width: @mobileLandscapeMin) {
+
+		.toolsTile li.invoicing a {
+			background-position: 57px -195px;
+		}
+
+		.toolsTile li.requestMoney a {
+			background-position: 57px -399px;
+		}
+
+		.toolsTile li.sendMoney a {
+			background-position: 57px -601px;
+			padding-bottom: 30px;
+		}
+
+		.toolsTile li.developer a {
+			background-position: 57px -795px;
+		}
+
+		.toolsTile li.myBusinessSetup a {
+			background-position: 52px -996px;
+		}
+	}
+
+	@media (max-width: @mobilePortraitMax) {
+
+		.toolsTile li.invoicing a {
+			background-position: 33px -195px;
+		}
+
+		.toolsTile li.requestMoney a {
+			background-position: 33px -399px;
+		}
+
+		.toolsTile li.sendMoney a {
+			background-position: 33px -601px;
+			padding-bottom: 35px;
+		}
+
+		.toolsTile li.developer a {
+			background-position: 33px -795px;
+		}
+
+		.toolsTile li.myBusinessSetup a {
+			background-position: 28px -996px;
+		}
+
+		.activityTile {
+			min-height: auto;
+
+			.price {
+				line-height: 13px;
+			}
+		}
+
+		.subNavigation {
+			margin-top: 10px;
+			text-align: left;
+		}
+	}
+}
+
+/* styles for tablet */
+html[data-device-type="tablet"] {
+
+	@media (max-width: @portableMiniPortraitMax) {
+
+		.betaBanner h2 {
+			max-width: 400px;
+		}
+
+		.moneyTile .row-four .multipleCurrency {
+			margin-top: 5px;
+
+			.multipleCurrencyArrow {
+				border-style: none;
+				margin-top: 0;
+			}
+		}
+	}
+}

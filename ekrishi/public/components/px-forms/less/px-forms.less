@@ -1,0 +1,78 @@
+@import "forms";
+
+
+/**** Text inputs ******/
+
+.textInput {
+
+  input {
+    
+    &.userText, &.completed {
+     border-color: #cee0eb;
+     background-color: #fff;
+     box-shadow: none;
+     color: #333;
+    }
+    
+  }
+  
+  &.tall input {
+    height: 3.0769em;
+  }
+  
+  &.small {
+    width: 33%;
+  }
+  
+  &.medium {
+    width: 50%;
+  }
+  
+  &.large {
+    width: 67%;
+  }
+  
+  &.hasError {
+    input,
+    input:hover,
+    input:focus {
+      border-color: #de746a;
+      .boxShadowMulti(0 0 5px rgba(220,99,88,.6), 0 2px 2px rgba(0,0,0,.15) inset);
+      background: url('https://www.paypalobjects.com/webstatic/i/sprite/sprite_ui.png') #fff right -2190px no-repeat;
+    }
+  }
+}
+
+
+/******* Lap **********/
+
+.lap  {
+  margin: 15px 0;
+  
+  label {
+    position: absolute;
+    left: 16px;
+    color: #666;
+    z-index: 1;
+    cursor: text;
+    text-shadow: 0 1px 0 #fff;
+    font-weight: lighter;
+    line-height: 2.61539em;
+    
+    &.focus {
+      color: #888;
+    }
+  }
+  
+  &.medium label {
+    left: 14px;
+  }
+  
+  &.tall label {
+    line-height: 3.0769em;
+  }
+}
+
+
+
+

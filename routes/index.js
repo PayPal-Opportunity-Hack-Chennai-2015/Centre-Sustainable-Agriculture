@@ -61,7 +61,27 @@ var index=function(){
     });
 
     //Handle About before and after login
-    
+    router.get("/submit", function(req,res){
+        console.log("Here");
+        client.search({
+            "index":"data",
+            "type":"crop",
+            "body": {
+                        query: {
+                            match: {
+                                body: 'elasticsearch'
+                            }
+                        }
+                    }
+        }).then(function (body) {
+            var hits = body.hits.hits;
+            console.log(hits);
+            res.render('qna-timeline',hits);
+        }, function (error) {
+            console.trace(error.message);
+        });
+
+    });
     return router;
 }  
 

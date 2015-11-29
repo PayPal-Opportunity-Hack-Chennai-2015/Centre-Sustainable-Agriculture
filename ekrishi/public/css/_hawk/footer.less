@@ -1,0 +1,142 @@
+/** Global footer styles
+	This styles used for global footer which is showing for all the pages at the bottom.
+	Author: Kesav
+*/
+
+footer{
+	background: #6e6d71;
+	border-top: 1px solid #e5e5e5;
+    margin: 0 auto;
+
+    .utility{
+    	background-color: #f5f5f5;
+	    border-top: 1px solid #fff;
+	    -moz-box-shadow: 0 5px 5px #5a595d;
+	    -webkit-box-shadow: 0 5px 5px #5a595d;
+	    box-shadow: 0 5px 5px #5a595d;
+
+	    .footerNav{
+	    	margin: 0 auto;
+
+		    ul{
+		    	float: left;
+		    	margin: 0;
+
+		    	li{
+		    		margin-right: 20px;
+		    		float: left;
+
+		    		a{
+		    			color: #666;
+					    display: inline-block;
+					    font-size: @font-size-base - 2px;
+					    font-weight: bold;
+					    line-height: 50px;
+					    padding: 0;
+					    text-shadow: 1px 1px #fff;
+		    		}
+		    		a:hover,
+		    		a:focus {
+		    			color: #0079c1;
+		    			text-decoration: none;
+		    		}
+		    	}
+		    }
+	    }
+    }
+
+    .footer{
+    	color: #fff;
+	    font-size: @font-size-base - 3px;
+	    margin: 0 auto;
+
+		.footerNav{
+			float: left;
+			width: 100%;
+
+			ul {
+				margin: 12px 0 auto;
+				float: left;
+
+				li{
+					margin-right: 20px;
+					float: left;
+
+					a{
+						color: #fff;
+						font-size: @font-size-base - 3px;
+    					line-height: 24px;
+					}
+					a:hover,
+					a:focus {
+						text-decoration: underline;
+					}
+				}
+			}
+
+			.legal{
+				clear: both;
+			    margin-top: 6px;
+			    overflow: auto;
+			    /*padding-bottom: 32px;*/
+
+			    .copyright{
+			    	clear: both;
+				    float: left;
+				    margin: 0 0 10px;
+				    padding: 0 10px 0 0;
+			    }
+
+			    ul{
+			    	border-left: 1px solid #ddd;
+				    float: left;
+				    list-style: none;
+				    margin: 0 0 10px;
+				    padding: 0 0 0 10px;
+				    width: auto;
+
+				    li{
+				    	margin: 0 0 0 9px;
+    					padding-left: 9px;
+    					float: left;
+
+    					&:first-child{
+    						border-left: 0 none;
+						    margin: 0;
+						    padding: 0;
+    					}
+
+    					a{
+    						color: #fff;
+    						line-height: 1em;
+    					}
+    					a:hover,
+						a:focus {
+							text-decoration: underline;
+						}
+				    }
+			    }
+			}
+		}
+    }
+}
+
+/* minimal footer */
+footer.minimal {
+	background: #fff;
+	border: 0;
+	clear: both;
+	color: #999;
+	font-size: @font-size-base - 3px;
+	padding: 0 0 15px;
+	text-align: center;
+
+	ul {
+		margin: .7em 0;
+		list-style-type: none;
+
+		a {
+			font-size: @font-size-base - 3px;
+		}
+	}
+}

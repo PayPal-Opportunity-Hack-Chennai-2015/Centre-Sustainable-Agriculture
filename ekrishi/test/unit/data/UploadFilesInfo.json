@@ -1,0 +1,58 @@
+{
+    "Receipt1":
+    {
+        "domain": "null",
+        "_events": {},
+        "_maxListeners": 10,
+        "size": 27305,
+        "path": "C:\\Users\\sevoonna\\AppData\\Local\\Temp\\upload_b95255404494eb91d1d82207c600538b",
+        "name": "Seshadri_receipt1.pdf",
+        "type": "application/pdf",
+        "hash": "null",
+        "lastModifiedDate": "Wed Apr 01 2015 15:22:16 GMT+0530 (India Standard Time)",
+        "_writeStream":
+        {
+            "_writableState": [],
+            "writable": true,
+            "domain": null,
+            "_events": {},
+            "_maxListeners": 10,
+            "path": "C:\\Users\\sevoonna\\AppData\\Local\\Temp\\upload_b95255404494eb91d1d82207c600538b",
+            "fd": "null",
+            "flags": "w",
+            "mode": 438,
+            "start": "",
+            "pos": "",
+            "bytesWritten": 27305,
+            "closed": true
+        }
+    },
+    "Receipp2":
+    {
+        "domain": "null",
+        "_events": {},
+        "_maxListeners": 10,
+        "size": 220721,
+        "path": "C:\\Users\\sevoonna\\AppData\\Local\\Temp\\upload_8807ffa0650b27e6b49472eb06f3b84b",
+        "name": "Seshadri_receipt2.pdf",
+        "type": "application/pdf",
+        "hash": "null",
+        "lastModifiedDate": "Wed Apr 01 2015 15:22:16 GMT+0530 (India Standard Time)",
+        "_writeStream":
+        {
+            "_writableState": [],
+            "writable": true,
+            "domain": null,
+            "_events": {},
+            "_maxListeners": 10,
+            "path": "C:\\Users\\sevoonna\\AppData\\Local\\Temp\\upload_8807ffa0650b27e6b49472eb06f3b84b",
+            "fd": "null",
+            "flags": "w",
+            "mode": 438,
+            "start": "",
+            "pos": "",
+            "bytesWritten": 220721,
+            "closed": true
+        }
+    }
+}

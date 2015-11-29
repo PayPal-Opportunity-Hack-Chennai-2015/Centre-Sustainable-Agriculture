@@ -1,0 +1,156 @@
+//
+// Navs - based on Bootstrap 3.0.3
+//
+// Customized for Resolution Center:
+//    - Added support for using labels in place of "anchors"
+//    - Customized appearance for Resolution Center branding
+// ------------------------------------------------------------------------------
+
+.nav {
+	> li {
+		> a,
+		> label {
+			font-weight: normal;
+			font-size: @nav-pills-font-size;
+			padding: @nav-pills-padding;
+			position: relative;
+			display: block;
+			&:hover,
+			&:focus,
+			&.active {
+				.box-shadow(@nav-pills-box-shadow-focus);
+				text-decoration: none;
+				background-color: @nav-link-hover-bg;
+				border: @nav-pills-border-focus;
+				cursor: pointer;
+			}
+		}
+
+		// Disabled state sets text to gray and nukes hover/tab effects
+		&.disabled > a,
+		&.disabled > label {
+			&:hover,
+			&:focus {
+				color: @nav-disabled-link-hover-color;
+				text-decoration: none;
+				background-color: transparent;
+				cursor: not-allowed;
+			}
+		}
+	}
+
+	// Open dropdowns
+	.open > a,
+	.open > label {
+		&,
+		&:hover,
+		&:focus {
+			background-color: @nav-link-hover-bg;
+			border-color: @link-color;
+		}
+	}
+}
+
+// Pills
+// -------------------------
+.nav-pills {
+	> li {
+		> a,
+		> label {
+			.box-shadow(@nav-pills-box-shadow);
+			.gradient(@nav-pills-top-bg, @nav-pills-bottom-bg);
+			border: @nav-pills-border-size @nav-pills-border-color solid;
+			border-radius: @nav-pills-border-radius;
+			color: @gray;
+
+			span {
+				background-image: url("@{baseImagePath}/i/resolutioncenter/sprite_messages-snad.png");
+				background-repeat: no-repeat;
+				padding: 0 10px;
+			}
+
+			// Hover state
+			&:hover span,
+			&:focus span {
+				background-position: 0 -65px;
+			}
+
+			// Checked state
+			&.checked span {
+				background-position: 0 -129px;
+			}
+		}
+
+		+ li {
+			margin-left: 2px;
+			padding-left: @nav-pills-spacing-inline;
+		}
+
+
+		// Active state
+		&.active > a,
+		&.active > label {
+			&,
+			&:hover,
+			&:focus,
+			&.active {
+			.gradient(@nav-pills-top-active-bg, @nav-pills-bottom-active-bg);
+				color: @gray;
+			}
+		}
+	}
+}
+
+.nav-pills-checkbox {
+	> li {
+		float: left;
+		.gradient(@nav-pills-top-bg, @nav-pills-bottom-bg);
+		
+		> a,
+		> label {
+			.box-shadow(@nav-pills-box-shadow);
+			border: @nav-pills-border-size @nav-pills-border-color solid;
+			border-radius: @nav-pills-border-radius;
+			color: @gray;
+			margin-bottom: 0;
+
+			background-image: url("@{baseImagePath}/i/resolutioncenter/sprite_messages-snad.png");
+			background-repeat: no-repeat;
+			background-position: 8px 9px;
+			padding: 7px 10px 7px 30px;
+			
+			// Hover state
+			&:hover,
+			&:focus {
+				background-position: 8px -56px;
+			}
+
+			// Checked state
+			&.checked {
+				background-position: 8px -120px;
+				.box-shadow(@nav-pills-box-shadow-focus);
+				text-decoration: none;
+				background-color: @nav-link-hover-bg;
+				border: @nav-pills-border-focus;
+				cursor: pointer;
+			}			
+		}
+
+		+ li {
+			margin-left: 10px;
+			padding-left: 0;
+		}
+
+		// Active state
+		&.checked > a,
+		&.checked > label {
+			&,
+			&:hover,
+			&:focus,
+			&.active {
+			.gradient(@nav-pills-top-active-bg, @nav-pills-bottom-active-bg);
+				color: @gray;
+			}
+		}
+	}
+}
