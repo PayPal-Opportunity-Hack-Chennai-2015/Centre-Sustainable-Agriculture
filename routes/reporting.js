@@ -12,9 +12,7 @@ var xls2json=require('xls-to-json');
 var multer=require('multer');
 var upload=multer({dest:'../files/'});
 
-var benfDetails=require('../models/benfDetails.js');
-var sendmail=require('../config/sendmail.js');
-var template=require('../config/template.js');
+
 
 
 
