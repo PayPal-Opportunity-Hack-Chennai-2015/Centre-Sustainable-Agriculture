@@ -1,1 +1,0 @@
-define(["nougat","jquery","backbone","BaseView","jqueryUI","view/transTile","view/money"],function(e,t,n,r){"use strict";var i=n.View.extend({el:"#index",initialize:function(){}});return new i})
