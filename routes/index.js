@@ -65,18 +65,19 @@ var index=function(){
         console.log("Here");
         client.search({
             "index":"data",
-            "type":"crop",
+            "type":"crops",
             "body": {
                         query: {
                             match: {
-                                body: 'elasticsearch'
+                                "name": req.query.crop
                             }
                         }
                     }
         }).then(function (body) {
             var hits = body.hits.hits;
-            console.log(hits);
-            res.render('qna-timeline',hits);
+            console.log(hits.pest.solution);
+            res.send(hits.pest.solution);
+            //res.render('qna-timeline',hits);
         }, function (error) {
             console.trace(error.message);
         });

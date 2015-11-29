@@ -58,10 +58,10 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <form  class="form-horizontal" role="form">
-                    <div class="form-group required">
+                    <div class="form-group ">
                         <label for="crop" class="control-label col-sm-4">What is the crop ?</label>
                         <div class="col-sm-8">
-                              <input type="text" class="form-control" name="crop" id="crop" required autofocus placeholder="select the crop">
+                              <input type="text" class="form-control" name="crop" id="crop"  autofocus placeholder="select the crop">
                                       
                               
                         </div>
@@ -70,7 +70,7 @@
                     <div class="form-group">
                         <label for="soil" class="control-label col-sm-4">What is the soil type ?</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="soil" id="soil" required autofocus placeholder="select the soil">
+                            <input type="text" class="form-control" name="soil" id="soil"  autofocus placeholder="select the soil">
                                       
                         </div>
                     </div>
@@ -95,6 +95,14 @@
 
                             </div>
                     </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="input-enquiry">Describe the problem you are facing. </label>
+                        <div class="col-sm-8">
+                            <textarea name="enquiry" rows="5" id="input-enquiry" class="form-control"></textarea>
+                        </div>
+                    </div>
+
                    
                     <div class="form-group">
                         <div class="col-sm-offset-6 col-xs-12 col-xs-offset-3">
@@ -255,22 +263,23 @@
 
 
            //For submitting data
-         $('#submit').on('click',function(e){
-             //var formdata=new Object();
-             var crop = $('#crop').val();
-             var soil = $('#soil').val();
-             var stage = $('#stage').val();
-             var pestImage = "";
-             if (imgSource != ""){
-                 pestImage = imgSource;
-             }
 
-             $.ajax({
-                 url:"../submit?crop="+crop+"&soil="+soil+"&stage="+stage+"&pestImage="+pestImage,
-                 type:"GET",
-                 success:function(res){
-                     //show solutions
-                    $('#main-container').innerHTML(res);
+           $('#submit').on('click',function(e){
+            //var formdata=new Object();
+            var crop = $('#crop').val();
+            var soil = $('#soil').val();
+            var stage = $('#stage').val();
+            var pestImage = "";
+            if (imgSource != ""){
+              pestImage = imgSource;
+            }
+            
+              $.ajax({
+                url:"../submit?crop="+crop+"&soil="+soil+"&stage="+stage+"&pestImage="+pestImage,
+                type:"GET",
+                success:function(){
+                  //show solutions
+
                  },
                  error:function(){
 
