@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel='stylesheet' href='\css\bootstrap.min.css' />
+        <!--<link rel='stylesheet' href='\css\bootstrap-modal.min.css'/>-->
+        <link rel='stylesheet' href='\css\style.css' />
+    </head>
+    
+    <body>
+        <!--code for navigation bar-->
+        <div class="navbar navbar-default navbar-fixed-top navbar-home">
+            <div class="container">
+                <div class="navbar-header"> <a class="navbar-brand" href="/home"> Marina Project Management</a>
+
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> 
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                                             
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right ">
+                        <li><a href="/about">About</a>
+                        </li>   
+                        <li><a href="/profile">Profile</a>
+                        </li>
+                        <li><a href="/faq">FAQ</a>
+                        </li>
+                        <li><a href="/contact">Contact Us</a>
+                        </li>
+                        <li><a href="/signout">Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--code for navigation bar ends here-->
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <div class="container">
+       
+                 <h3 class="lead"><strong>Welcome <%=user.name%></strong></h3>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="panel-default home-panel">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="thumbnail"> <a href="javascript:void(0)" class="content-box">
+                            <p><img src="\images\Projects.jpeg" class="img-responsive" alt="Projects"> </p>
+                            <h3> Projects</h3>
+                            <div class="list-group"> <a href="/project" class="list-group-item">Create Project</a>
+
+                                <hr> <a href="#" class="list-group-item" id="editprojects">Edit or Delete Projects</a> 
+
+                                <hr> <a href="#" class="list-group-item" id="addCategory">Add Project Category/Location</a> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="thumbnail"> <a href="javascript:void(0)" class="content-box">
+                           <p><img src="\images\Beneficiary.jpg" class="img-responsive" alt="Projects"> </p>
+                           <h3> Beneficiary Details</h3>
+                            <div class="list-group"> 
+                                    <a href="/beneficiary" class="list-group-item">Add Details</a><hr>
+                                    <a href="/beneficiary/edit" class="list-group-item">Edit or Delete Details</a><hr>
+                                    <a href="#" class="list-group-item" id="report">Import / Export</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="thumbnail"> <a href="javascript:void(0)" class="content-box">
+                           <p><img src="\images\Analytics.jpg" class="img-responsive" alt="Projects"> </p>
+                           <h3>Analytics</h3>
+                           <div class="list-group"> 
+                              <a href="/analytics" class="list-group-item">View Analytics</a>
+                           </div>
+                        </div>  
+                    </div>
+               </div>
+           </div>
+       </div>   
+     
+    </div> <!-- /container -->
+
+    <!--Show Recent Activities Button to view recent Activites -->
+        <div class="text-center btn-home">
+            <button class="btn-recentActivities" id="clickRecentActivity">Show Recent Activities</button>
+        </div>
+
+     
+
+        
+
+        <!-- Recent Activities of User -->
+        <div class="container" id="recentActivityDetails">
+            <div class="well" id="recentActivity">
+                 <h2>Recent Activity</h2>
+
+                <!-- <h5>You dont have any recent activities yet. Recent activities user has done is given here.</h5>-->
+                <table class="table table-hover" id="benf-details">
+                    <thead>
+                        <tr>
+                            <th>Date of Activity</th>
+                            <th>Activity Type</th>
+                            <th>Activity Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--Beneficiary data will be dynamically added here-->
+                    </tbody>
+                </table>
+            </div>
+
+           
+        </div>
+
+        
+
+
+
+
+        <!-- Site footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>PayPal &copy; Powered By Marina</p>
+            </div>
+        </footer>
+    </body>
+    <script src="\js\jquery.js"></script>
+    <script src="\js\bootstrap.min.js"></script>
+    <script src="\js\bootstrap-modal.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+
+
+            //Loading home page lists for each category and adding animations
+            $('.content-box').click(function() {
+                $(this).closest('.thumbnail').find('.list-group').slideToggle();
+            });
+            $('.content-box').mouseenter(function() {
+                $(this).closest('.thumbnail').find('img').addClass('blur');
+            });
+            $('.content-box').mouseleave(function() {
+                $(this).closest('.thumbnail').find('img').removeClass('blur');
+            });
+
+
+            //Loading recent activity
+            $.ajax({
+                url: "../activities",
+                type: "GET",
+                headers: {
+                    "Accept": "application/json;odata=verbose"
+                },
+
+                success: function(data) {
+
+                    for (var i = 0; i < data.length; i++) {
+                        var tr;
+                        var date = data[i].date;
+
+                        tr = $("<tr>");
+                        tr.append("<td>" + date.slice(0, 10) + "</td>");
+                        tr.append("<td>" + data[i].type + "</td>");
+                        tr.append("<td>" + data[i].activityname + "</td>");
+
+                        $('tbody').append(tr);
+                    }
+
+                },
+                error: function(data) {
+                    alert("error");
+                },
+                async: false
+            });
+
+
+            //On click of import/export option
+            $('#report').on('click', function() {
+                var modalWindow = new BootstrapDialog({
+                    message: $('<div></div>').load('/reports')
+                });
+                BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_PRIMARY] = 'Generate Reports';
+                modalWindow.open();
+            });
+
+            $('#addCategory').on('click', function() {
+
+                var modalWindow = new BootstrapDialog({
+                    message: $('<div></div>').load('/project/addCategoryLoc')
+                });
+                BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_PRIMARY] = 'Add Category/Location';
+                modalWindow.open();
+            });
+            $("#editprojects").on('click',function(){
+                if($(window).width() >= 780){
+                    
+                    $("#editprojects").attr("href", "/project/edit");
+  
+                }
+                else
+                    $("#editprojects").attr("href", "/project/viewprojects");
+
+            });
+
+        //To Scroll Down on clicking Recent Activity
+        $('#clickRecentActivity').click(function() {
+            $('html,body').animate({
+                scrollTop: $('#recentActivity').offset().top
+            },
+                'slow');
+        });
+
+
+      
+
+        
+        
+
+        });
+
+        
+    </script>
+
+</html>

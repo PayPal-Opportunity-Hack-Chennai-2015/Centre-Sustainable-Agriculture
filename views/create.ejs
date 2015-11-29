@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project creation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/bootstrap-duallistbox.min.css" rel="stylesheet" type="text/css" media="all">
+    <link rel='stylesheet' href='\css\bootstrap.min.css'/>
+    <link rel='stylesheet' href='\css\jquery-ui.min.css'/>
+    <link rel='stylesheet' href='\css\form.css'/>
+
+    <script src="\js\jquery.js"></script>
+    <script src="\js\bootstrap.min.js"></script>
+
+</head>
+<body>
+    
+  <!--code for navigation bar-->
+     <div class="navbar navbar-default navbar-fixed-top navbar-home" >
+      <div class="container">
+        <div class="navbar-header">
+
+          <a class="navbar-brand" href="/home"> Marina Project Management</a>
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>  
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right ">
+            <li><a href="/about">About</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/signout">Log Out</a></li>         
+          </ul>
+        </div>
+      </div>
+    </div>
+     <!--  code for navigation bar ends here-->
+
+    <div class="jumbotron">
+      <div class="container">
+        <h4 class="lead">Analytics Dashboard</h4> 
+        <p>Select approppriate options to view analytics</p>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <form  action="/addProject" method="POST" class="form-horizontal" role="form">
+
+
+                    <div class="form-group">
+                        <label for="category" class=" control-label col-sm-4">Project Category</label>
+                        <div class="col-sm-8">
+                              <select class="form-control" name="category" id="category">
+                                      <option>Select a category</option>
+                              </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name" class="control-label col-sm-4">Project Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="name" placeholder="Project Name" name="project">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Desc" class="control-label col-sm-4">Project Description</label>
+                        <div class="col-sm-8">
+                            <input id="desc" class="form-control" placeholder="Project Description" name="desc" required >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lead" class=" control-label col-sm-4">Project Lead</label>
+                        <div class="col-sm-8">
+                            <input id="lead" class="form-control" placeholder="Name of Project Lead" name="lead" required >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class=" control-label col-sm-4">Contact Email</label>
+                        <div class="col-sm-8">
+                            <input id="email" class="form-control" placeholder="Contact Email id" name="email" required >
+                        </div>
+                    </div>
+
+                    <div class="form-group">    
+                        <label for="locations" class=" control-label col-sm-4 col-xs-12">Locations</label>
+                        <div class="col-xs-12 col-sm-8">
+                                <select multiple="multiple" size="10" id="locations"></select> 
+                        </div>
+                    </div>
+
+
+                    <div class="form-group has-feedback">
+                        <label for="period" class=" control-label col-sm-4 col-xs-12">Project Timeframe</label>
+                        <div class="col-sm-4 col-xs-6">
+                            <input type= "text" id="start-date" class=" form-control date-picker" placeHolder="Start Date">
+                            <i class="glyphicon glyphicon-calendar form-control-feedback"></i>
+                        </div>
+                        <div class="col-sm-4 col-xs-6">
+                            <input type= "text" id="end-date" class="form-control date-picker" placeholder="End Date">
+                            <i class="glyphicon glyphicon-calendar form-control-feedback"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="funds" class=" control-label col-sm-4 col-xs-12">Project Fund</label>
+
+                        <div class="col-sm-6 col-xs-8">
+                             <input id="funds" class="form-control" placeholder="Project fund" name="funds">
+                        </div>
+
+                        <div class="col-sm-2 col-xs-4">
+                              <input type="text" id="funds" class="form-control" value="INR" name="currency">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-6 col-xs-12 col-xs-offset-3">
+                            <button type="submit" class="btn btn-primary btn-lg">Add Project</button>
+                        </div>
+                    </div>
+                </form>
+              </div>
+
+        </div>
+    </div>
+
+    </body>
+    <script src="\js\jquery.js"></script> 
+    <script src="\js\jquery-ui.js"></script> 
+    <script src="\js\bootstrap.min.js"></script>
+    <script src="\js\jquery.bootstrap-duallistbox.min.js"></script>
+
+    <script type="text/javascript">
+    
+     $(document).ready(function(){
+        
+        //For date control
+        $(".date-picker").datepicker();
+
+       //For populating project category dropdown
+        $.ajax({
+            url:"../projectCategory",
+            type:"GET",
+            headers:{"Accept":"application/json;odata=verbose"},
+            success:function(data){
+                for(var i in data){
+                    var item=$('<option>'+data[i].name+'</option>');
+                    $('#category').append(item);
+                }
+            },
+            error:function(data){
+                alert("error");
+            }
+        });
+
+        //For populating locations list
+            $.ajax({
+                  url:"../locations",
+                  type:"GET",
+                  headers:{"Accept":"application/json;odata=verbose"},
+                  success:function(data){
+                           for(var i in data){
+                                  var item=$('<option>'+data[i].location+'</option>');
+                                  $('#locations').append(item);
+                          }
+                    },
+                  error:function(data){
+                       alert("error");
+                   },
+                  async:false
+             });
+
+        //For handling location list events
+             $('#locations').bootstrapDualListbox({
+                  bootstrap2compatible    : false,
+                  preserveselectiononmove : false,            // 'all' / 'moved' / false
+                  moveonselect            : true,             // true/false (forced true on androids, see the comment later)
+                  initialfilterfrom       : '',               // string, filter selectables list on init
+                  initialfilterto         : '',               // string, filter selected list on init
+                  helperselectnamepostfix     : '_helper',    // 'string_of_postfix' / false
+                  infotext: 'Showing all {0}',// text when all options are visible / false for no info text
+                  infotextfiltered        : '<span class="label label-warning">Filtered</span> {0} from {1}',// when not all of the options are visible due to the filter
+                  selectorminimalheight   : 100,
+                  showfilterinputs        : true,
+                  filterplaceholder       : 'Filter',
+                  filtertextclear         : 'show all',
+                  nonselectedlistlabel    : false,            // 'string', false
+                  selectedlistlabel       : false,            // 'string', false
+                  filteronvalues          : false             // filter by selector's values, boolean
+    });
+
+
+
+
+          
+
+
+     });
+
+    </script>
+</html>
