@@ -97,6 +97,15 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="stage1" class="control-label col-sm-4">Upload files</label>
+                         <div class="col-sm-8">
+                             <input type="file" id="choose" multiple="multiple" />
+                             <br>
+                            <div id="uploadPreview"></div>
+                            </div>
+                    </div>
+
+                    <div class="form-group">
                         <label class="col-sm-4 control-label" for="input-enquiry">Describe the problem you are facing. </label>
                         <div class="col-sm-8">
                             <textarea name="enquiry" rows="5" id="input-enquiry" class="form-control"></textarea>
@@ -129,6 +138,37 @@
     <script type="text/javascript">
     
      $(document).ready(function(){
+      var uploadedImages = [];
+
+      function readImage(file) {
+  
+    var reader = new FileReader();
+    var image  = new Image();
+  
+    reader.readAsDataURL(file);  
+    reader.onload = function(_file) {
+        image.src    = _file.target.result;              // url.createObjectURL(file);
+        uploadedImages.push(_file.target.result);
+        console.log(_file.target.result);
+        image.onload = function() {
+            var w = "80px",
+                h = "70px",
+                t = file.type,                           // ext only: // file.type.split('/')[1],
+                n = file.name,
+                s = ~~(file.size/1024) +'KB';
+            $('#uploadPreview').append('<img src="'+ this.src +'" style=\"width:80px;height:70px;\">' + ' '+s+' '+n+'<br>');
+        };
+        image.onerror= function() {
+            alert('Invalid file type: '+ file.type);
+        };      
+    };
+    
+}
+$("#choose").change(function (e) {
+    if(this.disabled) return alert('File upload not supported!');
+    var F = this.files;
+    if(F && F[0]) for(var i=0; i<F.length; i++) readImage( F[i] );
+});
 
         var availableCropTags = ["wheat", "paddy", "cotton"];
 
