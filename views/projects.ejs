@@ -104,7 +104,7 @@
                     <div class="form-group">
                         <label for="stage" class="control-label col-sm-4">What is the stage of the crop ?</label>
                          <div class="col-sm-8">
-                        <select class="form-control" name="stage" id="stage" required autofocus>
+                        <select class="form-control" name="stage" id="stage"  autofocus>
                                       <option value="">Select the soil</option>
                               </select>
                             </div>
@@ -120,8 +120,17 @@
                           <input type="radio" name="radio" id="no">No</label>
                       </div>
                         <div id="imagelist"></div>
-
                             </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="stage" class="control-label col-sm-4">Upload a file</label>
+                         <div class="col-sm-8">
+                          <input type="file" id="choose" multiple="multiple"/><br>
+                          <div id="uploadPreview"></div>
+                         </div>
+                        
                     </div>
                    
                     <div class="form-group">
@@ -149,7 +158,43 @@
 
     <script type="text/javascript">
     
-     $(document).ready(function(){
+      $(document).ready(function(){
+        uploadedFiles = new Array();
+        function readImage(file) {
+          var that = this;
+          var reader = new FileReader();
+          var image = new Image();
+          reader.readAsDataURL(file);
+          reader.onload = function(_file) {
+            uploadedFiles.push(_file.target.result);
+            image.src = _file.target.result; // url.createObjectURL(file);
+            image.onload = function() {
+              var w = '80px',//this.width,
+                h = '70px',//this.height,
+                t = file.type, // ext only: // file.type.split('/')[1],
+                n = file.name,
+                s = ~~(file.size/1024) +'KB';
+              $('#uploadPreview').append('<img src="'+ this.src +'" style=\"width:80px;height:70px;\">' + ' ' +s+' '+n+'<br>');
+              console.log('<img src="'+ this.src +'" style=\"width:80px;height:70px;\" size='+s+' type='+t+' name='+n+'><br>');
+            };
+          image.onerror= function() {
+            alert('Invalid file type: '+ file.type);
+          }; 
+        };
+    
+}
+$("#choose").change(function (e) {
+    if(this.disabled){
+      return alert('File upload not supported!');
+    }
+    var F = this.files;
+    if(F && F[0]){
+      for(var i=0; i<F.length; i++) {
+        readImage( F[i] );
+      }
+    }
+});
+
 
         var availableCropTags = ["wheat", "paddy", "cotton"];
 
@@ -227,10 +272,11 @@
               success:function(data){
                 console.log(data);
                   for(var i in data){
+                    var temp = data[i]._source.name;
                     //alert(i);
                     //var image = new Image();
                     //image.src = 'data:image/png;base64,'+data[i]._source.image;
-                    $('#imagelist').append("<img class='pestImg' src='data:image/png;base64,"+data[i]._source.image+"'/>");
+                    $('#imagelist').append("<img class='pestImg' id='"+temp+"' src='data:image/png;base64,"+data[i]._source.image+"'/>");
                   }
               },
               error:function(data){
@@ -245,10 +291,12 @@
          });
 
         var imgSource="";
+        var image="";
         $('#imagelist').on('click','img',function(){
           $('.selected').removeClass('selected');
            $(this).addClass('selected');
-           imgSource = this.src;
+           imgSource = this.id;
+           
         });
 
 
@@ -269,19 +317,9 @@
               pestImage = imgSource;
             }
             
-
-            formdata = {
-              crop:crop,
-              soil:soil,
-              stage:stage,
-              pestImage:pestImage
-            };
-
               $.ajax({
-                url:"../add",
-                type:"POST",
-                data:formdata,
-                dataType:"json",
+                url:"../getsolution?crop="+crop+"&soil="+soil+"&stage="+stage+"&pestImage="+pestImage,
+                type:"GET",
                 success:function(){
                   //show solutions
                  },
