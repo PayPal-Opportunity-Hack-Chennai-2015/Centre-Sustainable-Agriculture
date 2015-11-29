@@ -26,14 +26,24 @@ var index=function(){
     router.get('/project',function(req,res){
         res.render('projects');
     });
+    router.post('/project',function(req,res){
+        res.render('projects');
+    });
 
     router.post('/add', function(req, res){
         console.log("adding");
-        
-
-
     });
 
+    router.get('/getsolution',function(req,res){
+
+        var crop=req.query.crop;
+        var soil=req.query.soil;
+        var img=req.query.pestImage;
+        console.log(crop,soil,img);
+        //console.log(crop);
+        //console.log(req.query.soil);
+
+    });
     router.get('/data', function(req, res) {
         //res.status(500).send('something went wrong while connecting to service');
 

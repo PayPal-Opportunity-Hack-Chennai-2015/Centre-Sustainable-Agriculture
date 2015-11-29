@@ -4,7 +4,7 @@
     <title>Project Management</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-	<link rel='stylesheet' href='\css\bootstrap.min.css'/>
+  <link rel='stylesheet' href='\css\bootstrap.min.css'/>
   <link rel='stylesheet' href='\css\signin.css' />
   <link rel='stylesheet' href='\css\form.css'/>
 
@@ -17,21 +17,14 @@
       <div class="container">
         <div class="navbar-header">
 
-          <a class="navbar-brand" href="/home"> Marina Project Management</a>
+          <a class="navbar-brand" href="/home"> Center for Sustainable Agriculture</a>
       <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
         </div>  
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right ">
-            <li><a href="/about-Home">About</a></li>
-            <li><a href="/faq-Home">FAQ</a></li>
-            <li><a href="/contact-Home">Contact Us</a></li>
-                     
-          </ul>
-        </div>
+        
       </div>
     </div>
 
@@ -58,11 +51,12 @@
  <div class="modal fade" id="login" role="dialog">
     <div class="modal-dialog">
    
-      <form class="form-signin" action="/signin" method="post">
+      <form class="form-signin" action="/project" method="post">
       <h2 class="form-signin-heading"> Log In</h2>
 
-        <label for="email" class="form-label">Email address</label>
-        <input type="email" id="email" class="form-control" placeholder="Email address" name="email" required autofocus>
+        <label for="contact number" class="form-label">Username</label>
+        
+        <input type="text" id="contact number" maxlength="10" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="IN" required="required" data-fv-notempty-message="This field cannot be left blank." placeholder="Mobile No. " class="form-control" name="data[User][mobile]" data-fv-field="data[User][mobile]">
    
         <label for="password" class="form-label">Password</label>
         <input type="password" id="password" class="form-control" placeholder="password" name="password" required>
@@ -85,11 +79,21 @@
     <div class="modal-dialog">
       <form class="form-signin" action="/register" method="post" >
       <h2 class="form-signin-heading"> Sign Up</h2>
-        <label for="email" class="form-label">Your Email address</label>
-        <input type="email" id="email" class="form-control" placeholder="Email address" name="email" required autofocus>
+        
+        <label for="name" class="form-label">Your full Name</label>
+        <input type="text" id="name" class="form-control" placeholder="Name" name="name" required autofocus>
 
-        <label for="username" class="form-label">Choose a UserName</label>
-        <input id="username" class="form-control" placeholder="User Name" name="username" required>
+        <label for="crop" class="form-label">Crop</label>
+        <input type="text" id="crop" class="form-control" placeholder="Crop" name="crop" required autofocus>
+
+        <label for="soil" class="form-label">Soil</label>
+        <input type="text" id="soil" class="form-control" placeholder="Soil" name="soil" required autofocus>
+
+        <label for="location" class="form-label">Location</label>
+        <input type="text" id="location" class="form-control" placeholder="Location" name="location" required autofocus>
+
+        <label for="number" class="form-label">Your Contact Number</label>
+        <input type="text" id="number" class="form-control" placeholder="9840455949" name="number" required autofocus>
 
         <label for="password" class="form-label">Choose a password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
@@ -98,16 +102,14 @@
         <label for="confirmPassword" class="form-label">Confirm password</label>
         <input type="password" id="confirmPassword" class="form-control" placeholder="Password" name="confirmPassword" required>
         <div><span class="error" id="confirmPwdError"></span></div>
+
         <button class="form-btn btn-lg btn-primary" id="signup_btn" type="submit">Register</button>
         
       </form>
     </div>
  </div>
 
-  <div class="container">
-    <h2 class="ti" align="center">Designed for everyone, everywhere.</h2>
-    <p  class="lead" align="center">Marina enables project management faster and easier. It's made for organizations of all skill levels, devices of all shapes, and projects of all sizes.</p>
-</div>
+  
 
 
 
@@ -117,7 +119,7 @@
      
         <div class="container">
         
-        <p> PayPal &copy; Powered By Marina</p>
+        <p> PayPal &copy; Powered By PEST</p>
         
         </div>
 
