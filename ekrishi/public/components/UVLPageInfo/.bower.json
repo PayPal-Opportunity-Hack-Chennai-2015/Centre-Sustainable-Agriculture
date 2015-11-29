@@ -1,0 +1,14 @@
+{
+  "name": "UVLPageInfo",
+  "version": "1.0.3",
+  "_release": "1.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.3",
+    "commit": "cd72c342c6f708805c59919fe3e33fc6084dceda"
+  },
+  "_source": "git://github.paypal.com/CoreComponents/UVLPageInfo",
+  "_target": "~1.0.3",
+  "_originalSource": "UVLPageInfo",
+  "_direct": true
+}

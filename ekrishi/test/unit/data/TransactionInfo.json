@@ -1,0 +1,16 @@
+{
+    "transactionId": "2DW83459HC353220M",
+    "createdDate": "Mar 20, 2015",
+    "grossAmountWithCurrency": { "amount": "10.00", "currencyCode": "USD" },
+    "transactionStatus": "PENDING",
+    "counterpartyEmail": "bchirala-rcr5@paypal.com",
+    "shipping": [
+        {
+            "destination": [],
+            "actions": []
+        }
+    ],
+    "posInfo": {},
+    "refundInfo": [],
+    "grossAmount": "$10.00 USD"
+}

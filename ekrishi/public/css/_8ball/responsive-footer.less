@@ -1,0 +1,41 @@
+@media (max-width: @tabletPortraitMin) {
+	.footer {
+		height: 89px;
+		margin-top: -90px;
+
+		.navbar-inner {
+			padding: 0 5px;
+
+			.inline {
+				padding: 0;
+
+				li {
+					margin-right: 0;
+				}
+
+				li.copyright {
+					display: block;
+				}
+
+				li.copyright:after {
+					content: "";
+				}
+			}
+
+			.inline:last-child {
+				li {
+					color: @textColorSmallLight;
+				}
+			}
+		}
+	}
+}
+@media (min-width: @tabletPortraitMin) {
+	.footer .inline {
+		li.classicLink {
+			a {
+				color: @textColorBlue;
+			}
+		}
+	}
+}

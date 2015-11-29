@@ -1,0 +1,32 @@
+{!
+	@param	isMobileOptimized		If not empty, loads the mobile optimized version of tracking JS
+!}
+{!FIXME: isMobile might be read from sys.pageInfo.isMobile after Sparta 2.4.5.X!}
+{#sys isMobile=data.isMobile}
+	{#tracking}
+		{?fpti}
+			{?fpti.jsFullUrl}
+				<script src="{fpti.jsFullUrl|s}"></script>
+			{:else}
+				{@if cond="'{isMobileOptimized}' == 'true'"}
+					{?isMobile}
+						<script src="{fpti.jsURL|s}/Mobile/js/pa/min/pa_mobile.js"></script>
+					{:else}
+						<script src="{fpti.jsURL|s}/pa/js/pa.js"></script>
+					{/isMobile}
+				{:else}
+					<script src="{fpti.jsURL|s}/pa/js/pa.js"></script>
+				{/if}
+			{/fpti.jsFullUrl}
+			<script>
+				(function(){
+					if(typeof PAYPAL.analytics != "undefined"){
+						PAYPAL.core = PAYPAL.core || {};
+						PAYPAL.core.{fpti.name} = PAYPAL.analytics.setup({data:'{fpti.dataString|s|j}', url:'{fpti.serverURL|s|j}'});
+					}
+				}());
+			</script>
+			<noscript><img src="https:{fpti.serverURL|s}?nojs=1&{fpti.dataString|s}" alt="" height="1" width="1" border="0"></noscript>
+		{/fpti}
+	{/tracking}
+{/sys}

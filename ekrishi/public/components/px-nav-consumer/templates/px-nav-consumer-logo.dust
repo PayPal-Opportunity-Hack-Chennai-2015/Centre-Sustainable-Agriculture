@@ -1,0 +1,10 @@
+{!
+Example dust file to pass as the "px-nav-logo" section for the header-generic component
+Required markup: ul.px-nav-actions>li
+TODO: replace with Logo component, when available
+!}
+<div class="px-nav-logo">
+	<a href="/">
+		<img src="https://www.paypalobjects.com/webstatic/logo/logo_paypal_106x27.png" alt="PayPal" />
+	</a>
+</div>

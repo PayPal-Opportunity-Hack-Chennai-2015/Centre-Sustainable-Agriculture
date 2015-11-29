@@ -1,0 +1,9 @@
+{!
+	Header logo for Merchant, passed to px-nav-generic component
+	TODO: replace with Logo component, when available
+!}
+<div class="px-nav-logo">
+	<a href="/">
+		<img src="https://www.paypalobjects.com/webstatic/logo/logo_paypal_106x27.png" alt="PayPal" />
+	</a>
+</div>

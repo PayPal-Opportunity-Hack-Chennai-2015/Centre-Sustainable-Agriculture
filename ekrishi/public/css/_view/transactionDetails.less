@@ -1,0 +1,81 @@
+#transactionDetails {
+
+	// Override section width
+	.sectionHeader, .sectionContent {
+		width: 75%;
+		margin: 0 auto;
+	}
+
+	.actions {
+		margin-bottom: 20px;
+		text-align: right;
+	}
+
+	// Escape action links
+	ul.actionLinks {
+		list-style-type: none;
+		margin-left: 1em;
+
+		li a {
+			font-size: @font-size-base - 2;
+			line-height: 18px;
+		}
+	}
+
+	dl {
+		margin: 0;
+
+		dt {
+			float: left;
+			width: 200px;
+			margin-right: 10px;
+			text-align: right;
+		}
+		dd {
+			width: auto;
+		}
+	}
+
+	.sectionHeader {
+		border-bottom: none;
+		color: rgb(186,109,44);
+		font-size: @font-size-base + 2;
+	}
+
+	.divider-middle {
+		border-bottom: 2px dotted #999;
+	}
+
+	#manageOrderBox {
+		min-height: 1.2em;
+		padding-left: 1em;
+		border-left: 1px solid #e2e2e2;
+	}
+}
+
+// Tracking Details Popover
+#trackingDetails {
+	margin: 1em 0;
+
+	.carrierLogo {
+		margin-left: 1em;
+
+		img {
+			background: #f4f4f4;
+			width: 80px;
+			height: 80px;
+		}
+	}
+
+	.trackingNumber {
+		p {
+			margin: 1em 0 0;
+		}
+	}
+
+	.noTracking {
+		margin: 1em auto;
+		text-align: center;
+	}
+
+}
